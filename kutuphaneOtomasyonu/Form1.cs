@@ -30,5 +30,20 @@ namespace kutuphaneOtomasyonu
             }
             
         }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+        FrmUyeler frm2;
+        private void BtnUyeler_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            if(frm2 == null || frm2.IsDisposed)
+            {
+                frm2 = new FrmUyeler();
+                frm2.MdiParent = this;
+                frm2.Show();
+            }
+        }
     }
 }

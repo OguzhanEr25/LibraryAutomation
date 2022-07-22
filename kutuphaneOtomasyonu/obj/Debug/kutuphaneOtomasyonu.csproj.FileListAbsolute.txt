@@ -81,3 +81,8 @@ C:\Users\oguz_\source\repos\kutuphaneOtomasyonu\kutuphaneOtomasyonu\obj\Debug\ku
 C:\Users\oguz_\source\repos\kutuphaneOtomasyonu\kutuphaneOtomasyonu\obj\Debug\kutuphaneOtomasyonu.csproj.CopyComplete
 C:\Users\oguz_\source\repos\kutuphaneOtomasyonu\kutuphaneOtomasyonu\obj\Debug\kutuphaneOtomasyonu.exe
 C:\Users\oguz_\source\repos\kutuphaneOtomasyonu\kutuphaneOtomasyonu\obj\Debug\kutuphaneOtomasyonu.pdb
+C:\Users\oguz_\source\repos\kutuphaneOtomasyonu\kutuphaneOtomasyonu\obj\Debug\kutuphaneOtomasyonu.Formlar.FrmUyeler.resources
+C:\Users\oguz_\source\repos\kutuphaneOtomasyonu\kutuphaneOtomasyonu\bin\Debug\EntityFramework.dll
+C:\Users\oguz_\source\repos\kutuphaneOtomasyonu\kutuphaneOtomasyonu\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\oguz_\source\repos\kutuphaneOtomasyonu\kutuphaneOtomasyonu\bin\Debug\EntityFramework.xml
+C:\Users\oguz_\source\repos\kutuphaneOtomasyonu\kutuphaneOtomasyonu\bin\Debug\EntityFramework.SqlServer.xml
