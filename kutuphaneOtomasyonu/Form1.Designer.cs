@@ -39,7 +39,7 @@ namespace kutuphaneOtomasyonu
             this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             this.BtnKitaplar = new DevExpress.XtraBars.BarButtonItem();
             this.BtnUyeler = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem4 = new DevExpress.XtraBars.BarButtonItem();
+            this.btnEmanetler = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.xtraTabbedMdiManager1 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
@@ -88,7 +88,7 @@ namespace kutuphaneOtomasyonu
             this.barButtonItem1,
             this.BtnKitaplar,
             this.BtnUyeler,
-            this.barButtonItem4,
+            this.btnEmanetler,
             this.barButtonItem5,
             this.barButtonItem6,
             this.barButtonItem7});
@@ -120,18 +120,19 @@ namespace kutuphaneOtomasyonu
             // 
             this.BtnUyeler.Caption = "Üyeler";
             this.BtnUyeler.Id = 3;
-            this.BtnUyeler.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem3.ImageOptions.Image")));
-            this.BtnUyeler.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem3.ImageOptions.LargeImage")));
+            this.BtnUyeler.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("BtnUyeler.ImageOptions.Image")));
+            this.BtnUyeler.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("BtnUyeler.ImageOptions.LargeImage")));
             this.BtnUyeler.Name = "BtnUyeler";
             this.BtnUyeler.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnUyeler_ItemClick);
             // 
-            // barButtonItem4
+            // btnEmanetler
             // 
-            this.barButtonItem4.Caption = "Emanetler Listesi";
-            this.barButtonItem4.Id = 4;
-            this.barButtonItem4.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem4.ImageOptions.Image")));
-            this.barButtonItem4.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem4.ImageOptions.LargeImage")));
-            this.barButtonItem4.Name = "barButtonItem4";
+            this.btnEmanetler.Caption = "Emanetler Listesi";
+            this.btnEmanetler.Id = 4;
+            this.btnEmanetler.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem4.ImageOptions.Image")));
+            this.btnEmanetler.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem4.ImageOptions.LargeImage")));
+            this.btnEmanetler.Name = "btnEmanetler";
+            this.btnEmanetler.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnEmanetler_ItemClick);
             // 
             // ribbonPage1
             // 
@@ -147,7 +148,7 @@ namespace kutuphaneOtomasyonu
             this.ribbonPageGroup1.ItemLinks.Add(this.barButtonItem1);
             this.ribbonPageGroup1.ItemLinks.Add(this.BtnKitaplar);
             this.ribbonPageGroup1.ItemLinks.Add(this.BtnUyeler);
-            this.ribbonPageGroup1.ItemLinks.Add(this.barButtonItem4);
+            this.ribbonPageGroup1.ItemLinks.Add(this.btnEmanetler);
             this.ribbonPageGroup1.Name = "ribbonPageGroup1";
             // 
             // xtraTabbedMdiManager1
@@ -179,7 +180,7 @@ namespace kutuphaneOtomasyonu
         private DevExpress.XtraBars.BarButtonItem barButtonItem1;
         private DevExpress.XtraBars.BarButtonItem BtnKitaplar;
         private DevExpress.XtraBars.BarButtonItem BtnUyeler;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem4;
+        private DevExpress.XtraBars.BarButtonItem btnEmanetler;
         private DevExpress.XtraTabbedMdi.XtraTabbedMdiManager xtraTabbedMdiManager1;
         private DevExpress.XtraBars.BarButtonItem barButtonItem5;
         private DevExpress.XtraBars.BarButtonItem barButtonItem6;

@@ -22,13 +22,13 @@ namespace kutuphaneOtomasyonu
         private void BtnKitaplar_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             // ana formdan kitaplar sekmesini bir kere açma ve açılıp kapatılmışsa tekrar açma şartı
-            if(frm1 == null || frm1.IsDisposed) 
+            if (frm1 == null || frm1.IsDisposed)
             {
-               frm1 = new FrmKitaplar();
-               frm1.MdiParent = this;
-               frm1.Show();
+                frm1 = new FrmKitaplar();
+                frm1.MdiParent = this;
+                frm1.Show();
             }
-            
+
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -38,11 +38,22 @@ namespace kutuphaneOtomasyonu
         FrmUyeler frm2;
         private void BtnUyeler_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            if(frm2 == null || frm2.IsDisposed)
+            if (frm2 == null || frm2.IsDisposed)
             {
                 frm2 = new FrmUyeler();
                 frm2.MdiParent = this;
                 frm2.Show();
+            }
+        }
+
+        FrmEmanetler frm3;
+        private void btnEmanetler_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            if (frm3 == null || frm3.IsDisposed)
+            {
+                frm3 = new FrmEmanetler();
+                frm3.MdiParent = this;
+                frm3.Show();
             }
         }
     }

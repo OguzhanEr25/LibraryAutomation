@@ -35,16 +35,11 @@ namespace kutuphaneOtomasyonu.Formlar
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.txtKitapDili = new DevExpress.XtraEditors.TextEdit();
             this.LblKitapDili = new DevExpress.XtraEditors.LabelControl();
-            this.cmBoxTur = new DevExpress.XtraEditors.ComboBoxEdit();
-            this.txtYayinEvi = new DevExpress.XtraEditors.TextEdit();
             this.LblYayinEvi = new DevExpress.XtraEditors.LabelControl();
-            this.LblAciklama = new DevExpress.XtraEditors.LabelControl();
             this.BtnTemizle = new DevExpress.XtraEditors.SimpleButton();
-            this.BtnResimSec = new DevExpress.XtraEditors.SimpleButton();
             this.BtnGüncelle = new DevExpress.XtraEditors.SimpleButton();
             this.BtnSil = new DevExpress.XtraEditors.SimpleButton();
             this.BtnEkle = new DevExpress.XtraEditors.SimpleButton();
-            this.rchAciklama = new System.Windows.Forms.RichTextBox();
             this.txtKitapAd = new DevExpress.XtraEditors.TextEdit();
             this.txtYazar = new DevExpress.XtraEditors.TextEdit();
             this.txtBaskiYili = new DevExpress.XtraEditors.TextEdit();
@@ -70,6 +65,11 @@ namespace kutuphaneOtomasyonu.Formlar
             this.xtraTabPage6 = new DevExpress.XtraTab.XtraTabPage();
             this.gridSosyoloji = new DevExpress.XtraGrid.GridControl();
             this.gridView5 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.txtYayinEvi = new DevExpress.XtraEditors.TextEdit();
+            this.cmBoxTur = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.LblAciklama = new DevExpress.XtraEditors.LabelControl();
+            this.rchAciklama = new System.Windows.Forms.RichTextBox();
+            this.BtnResimSec = new DevExpress.XtraEditors.SimpleButton();
             this.pctBox = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).BeginInit();
             this.xtraTabControl1.SuspendLayout();
@@ -77,8 +77,6 @@ namespace kutuphaneOtomasyonu.Formlar
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtKitapDili.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cmBoxTur.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtYayinEvi.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtKitapAd.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtYazar.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtBaskiYili.Properties)).BeginInit();
@@ -100,6 +98,8 @@ namespace kutuphaneOtomasyonu.Formlar
             this.xtraTabPage6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridSosyoloji)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtYayinEvi.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmBoxTur.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctBox)).BeginInit();
             this.SuspendLayout();
             // 
@@ -169,22 +169,6 @@ namespace kutuphaneOtomasyonu.Formlar
             this.LblKitapDili.TabIndex = 26;
             this.LblKitapDili.Text = "Kitap Dili:";
             // 
-            // cmBoxTur
-            // 
-            this.cmBoxTur.Location = new System.Drawing.Point(156, 244);
-            this.cmBoxTur.Name = "cmBoxTur";
-            this.cmBoxTur.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cmBoxTur.Size = new System.Drawing.Size(100, 20);
-            this.cmBoxTur.TabIndex = 24;
-            // 
-            // txtYayinEvi
-            // 
-            this.txtYayinEvi.Location = new System.Drawing.Point(156, 334);
-            this.txtYayinEvi.Name = "txtYayinEvi";
-            this.txtYayinEvi.Size = new System.Drawing.Size(100, 20);
-            this.txtYayinEvi.TabIndex = 23;
-            // 
             // LblYayinEvi
             // 
             this.LblYayinEvi.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
@@ -195,16 +179,6 @@ namespace kutuphaneOtomasyonu.Formlar
             this.LblYayinEvi.TabIndex = 22;
             this.LblYayinEvi.Text = "Yayın Evi:";
             // 
-            // LblAciklama
-            // 
-            this.LblAciklama.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.LblAciklama.Appearance.Options.UseFont = true;
-            this.LblAciklama.Location = new System.Drawing.Point(38, 371);
-            this.LblAciklama.Name = "LblAciklama";
-            this.LblAciklama.Size = new System.Drawing.Size(46, 14);
-            this.LblAciklama.TabIndex = 21;
-            this.LblAciklama.Text = "Açıklama";
-            // 
             // BtnTemizle
             // 
             this.BtnTemizle.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("BtnTemizle.ImageOptions.Image")));
@@ -214,16 +188,6 @@ namespace kutuphaneOtomasyonu.Formlar
             this.BtnTemizle.TabIndex = 20;
             this.BtnTemizle.Text = "Temizle";
             this.BtnTemizle.Click += new System.EventHandler(this.BtnTemizle_Click);
-            // 
-            // BtnResimSec
-            // 
-            this.BtnResimSec.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("BtnResimSec.ImageOptions.Image")));
-            this.BtnResimSec.Location = new System.Drawing.Point(25, 46);
-            this.BtnResimSec.Name = "BtnResimSec";
-            this.BtnResimSec.Size = new System.Drawing.Size(75, 23);
-            this.BtnResimSec.TabIndex = 18;
-            this.BtnResimSec.Text = "Resim Seç";
-            this.BtnResimSec.Click += new System.EventHandler(this.BtnResimSec_Click);
             // 
             // BtnGüncelle
             // 
@@ -254,14 +218,6 @@ namespace kutuphaneOtomasyonu.Formlar
             this.BtnEkle.TabIndex = 14;
             this.BtnEkle.Text = "Ekle";
             this.BtnEkle.Click += new System.EventHandler(this.BtnEkle_Click);
-            // 
-            // rchAciklama
-            // 
-            this.rchAciklama.Location = new System.Drawing.Point(156, 369);
-            this.rchAciklama.Name = "rchAciklama";
-            this.rchAciklama.Size = new System.Drawing.Size(118, 76);
-            this.rchAciklama.TabIndex = 13;
-            this.rchAciklama.Text = "";
             // 
             // txtKitapAd
             // 
@@ -483,6 +439,50 @@ namespace kutuphaneOtomasyonu.Formlar
             this.gridView5.VertScrollVisibility = DevExpress.XtraGrid.Views.Base.ScrollVisibility.Always;
             this.gridView5.FocusedRowObjectChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowObjectChangedEventHandler(this.gridView5_FocusedRowObjectChanged);
             // 
+            // txtYayinEvi
+            // 
+            this.txtYayinEvi.Location = new System.Drawing.Point(156, 334);
+            this.txtYayinEvi.Name = "txtYayinEvi";
+            this.txtYayinEvi.Size = new System.Drawing.Size(100, 20);
+            this.txtYayinEvi.TabIndex = 23;
+            // 
+            // cmBoxTur
+            // 
+            this.cmBoxTur.Location = new System.Drawing.Point(156, 244);
+            this.cmBoxTur.Name = "cmBoxTur";
+            this.cmBoxTur.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cmBoxTur.Size = new System.Drawing.Size(100, 20);
+            this.cmBoxTur.TabIndex = 24;
+            // 
+            // LblAciklama
+            // 
+            this.LblAciklama.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.LblAciklama.Appearance.Options.UseFont = true;
+            this.LblAciklama.Location = new System.Drawing.Point(38, 371);
+            this.LblAciklama.Name = "LblAciklama";
+            this.LblAciklama.Size = new System.Drawing.Size(46, 14);
+            this.LblAciklama.TabIndex = 21;
+            this.LblAciklama.Text = "Açıklama";
+            // 
+            // rchAciklama
+            // 
+            this.rchAciklama.Location = new System.Drawing.Point(156, 369);
+            this.rchAciklama.Name = "rchAciklama";
+            this.rchAciklama.Size = new System.Drawing.Size(118, 76);
+            this.rchAciklama.TabIndex = 13;
+            this.rchAciklama.Text = "";
+            // 
+            // BtnResimSec
+            // 
+            this.BtnResimSec.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("BtnResimSec.ImageOptions.Image")));
+            this.BtnResimSec.Location = new System.Drawing.Point(25, 46);
+            this.BtnResimSec.Name = "BtnResimSec";
+            this.BtnResimSec.Size = new System.Drawing.Size(75, 23);
+            this.BtnResimSec.TabIndex = 18;
+            this.BtnResimSec.Text = "Resim Seç";
+            this.BtnResimSec.Click += new System.EventHandler(this.BtnResimSec_Click);
+            // 
             // pctBox
             // 
             this.pctBox.Location = new System.Drawing.Point(156, 19);
@@ -500,7 +500,7 @@ namespace kutuphaneOtomasyonu.Formlar
             this.Controls.Add(this.xtraTabControl2);
             this.Controls.Add(this.xtraTabControl1);
             this.Name = "FrmKitaplar";
-            this.Text = "FrmKitaplar";
+            this.Text = "Kitaplar";
             this.Load += new System.EventHandler(this.FrmKitaplar_Load);
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).EndInit();
             this.xtraTabControl1.ResumeLayout(false);
@@ -509,8 +509,6 @@ namespace kutuphaneOtomasyonu.Formlar
             this.groupControl1.ResumeLayout(false);
             this.groupControl1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtKitapDili.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cmBoxTur.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtYayinEvi.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtKitapAd.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtYazar.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtBaskiYili.Properties)).EndInit();
@@ -532,6 +530,8 @@ namespace kutuphaneOtomasyonu.Formlar
             this.xtraTabPage6.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridSosyoloji)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtYayinEvi.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmBoxTur.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctBox)).EndInit();
             this.ResumeLayout(false);
 
@@ -541,16 +541,11 @@ namespace kutuphaneOtomasyonu.Formlar
         private DevExpress.XtraTab.XtraTabControl xtraTabControl1;
         private DevExpress.XtraTab.XtraTabPage xtraTabPage2;
         private DevExpress.XtraEditors.GroupControl groupControl1;
-        private DevExpress.XtraEditors.ComboBoxEdit cmBoxTur;
-        private DevExpress.XtraEditors.TextEdit txtYayinEvi;
         private DevExpress.XtraEditors.LabelControl LblYayinEvi;
-        private DevExpress.XtraEditors.LabelControl LblAciklama;
         private DevExpress.XtraEditors.SimpleButton BtnTemizle;
-        private DevExpress.XtraEditors.SimpleButton BtnResimSec;
         private DevExpress.XtraEditors.SimpleButton BtnGüncelle;
         private DevExpress.XtraEditors.SimpleButton BtnSil;
         private DevExpress.XtraEditors.SimpleButton BtnEkle;
-        private System.Windows.Forms.RichTextBox rchAciklama;
         private DevExpress.XtraEditors.TextEdit txtKitapAd;
         private DevExpress.XtraEditors.TextEdit txtYazar;
         private DevExpress.XtraEditors.TextEdit txtBaskiYili;
@@ -578,6 +573,11 @@ namespace kutuphaneOtomasyonu.Formlar
         private DevExpress.XtraGrid.Views.Grid.GridView gridView5;
         private DevExpress.XtraEditors.TextEdit txtKitapDili;
         private DevExpress.XtraEditors.LabelControl LblKitapDili;
+        private DevExpress.XtraEditors.TextEdit txtYayinEvi;
+        private DevExpress.XtraEditors.ComboBoxEdit cmBoxTur;
         private System.Windows.Forms.PictureBox pctBox;
+        private DevExpress.XtraEditors.LabelControl LblAciklama;
+        private DevExpress.XtraEditors.SimpleButton BtnResimSec;
+        private System.Windows.Forms.RichTextBox rchAciklama;
     }
 }

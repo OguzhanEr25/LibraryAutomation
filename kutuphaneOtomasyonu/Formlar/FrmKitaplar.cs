@@ -189,7 +189,7 @@ namespace kutuphaneOtomasyonu.Formlar
         }
 
         public string yeniYol;
-        private void BtnResimSec_Click(object sender, EventArgs e)
+        private void BtnResimSec_Click(object sender, EventArgs e)  
         {
             OpenFileDialog dosya = new OpenFileDialog();
             dosya.Filter = "Resim Dosyası |*.jpg;*.png;*.nef | Tüm Dosyalar | *.*";

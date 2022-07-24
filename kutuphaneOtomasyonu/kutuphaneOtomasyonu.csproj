@@ -55,6 +55,8 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -72,6 +74,12 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formlar\FrmEmanetler.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formlar\FrmEmanetler.Designer.cs">
+      <DependentUpon>FrmEmanetler.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formlar\FrmKitaplar.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -84,11 +92,44 @@
     <Compile Include="Formlar\FrmUyeler.Designer.cs">
       <DependentUpon>FrmUyeler.cs</DependentUpon>
     </Compile>
+    <Compile Include="KutuphaneModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>KutuphaneModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="KutuphaneModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>KutuphaneModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="KutuphaneModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>KutuphaneModel.edmx</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SqlBaglantisi.cs" />
+    <Compile Include="sysdiagrams.cs">
+      <DependentUpon>KutuphaneModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TblEmanetler.cs">
+      <DependentUpon>KutuphaneModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TblKitaplar.cs">
+      <DependentUpon>KutuphaneModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TblKitapTurleri.cs">
+      <DependentUpon>KutuphaneModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TblUyeler.cs">
+      <DependentUpon>KutuphaneModel.tt</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formlar\FrmEmanetler.resx">
+      <DependentUpon>FrmEmanetler.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formlar\FrmKitaplar.resx">
       <DependentUpon>FrmKitaplar.cs</DependentUpon>
@@ -106,6 +147,13 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EntityDeploy Include="KutuphaneModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>KutuphaneModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="KutuphaneModel.edmx.diagram">
+      <DependentUpon>KutuphaneModel.edmx</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -122,6 +170,21 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resimler\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="KutuphaneModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>KutuphaneModel.edmx</DependentUpon>
+      <LastGenOutput>KutuphaneModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="KutuphaneModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>KutuphaneModel.edmx</DependentUpon>
+      <LastGenOutput>KutuphaneModel.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

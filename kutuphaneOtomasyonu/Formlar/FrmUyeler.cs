@@ -60,7 +60,6 @@ namespace kutuphaneOtomasyonu.Formlar
                 pctBox.ImageLocation = yeniYol;
             }
         }
-
         //Tabloya veri ekleme butonu
         private void BtnEkle_Click(object sender, EventArgs e)
         {

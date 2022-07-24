@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="kutuphaneOtomasyonModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="TblEmanetler">
+    <Key>
+      <PropertyRef Name="EmanetNo" />
+    </Key>
+    <Property Name="EmanetNo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="uyeID" Type="int" />
+    <Property Name="kitapID" Type="int" />
+    <Property Name="EmanetVermeTarihi" Type="date" />
+    <Property Name="EmanetAlmaTarihi" Type="date" />
+    <Property Name="EmanetIslemTarihi" Type="datetime" />
+    <Property Name="EmanetDurum" Type="bit" />
+  </EntityType>
+  <EntityType Name="TblKitaplar">
+    <Key>
+      <PropertyRef Name="kitapID" />
+    </Key>
+    <Property Name="kitapID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="kitapAd" Type="nchar" MaxLength="60" />
+    <Property Name="kitapYazari" Type="nchar" MaxLength="50" />
+    <Property Name="kitapTuru" Type="nchar" MaxLength="25" />
+    <Property Name="kitapBaskiYili" Type="date" />
+    <Property Name="kitapDili" Type="nchar" MaxLength="25" />
+    <Property Name="YayinEvi" Type="nchar" MaxLength="30" />
+    <Property Name="Aciklama" Type="nchar" MaxLength="100" />
+    <Property Name="kitapFoto" Type="varchar" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="TblKitapTurleri">
+    <Key>
+      <PropertyRef Name="turID" />
+    </Key>
+    <Property Name="turID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="kitapTuru" Type="nchar" MaxLength="25" />
+  </EntityType>
+  <EntityType Name="TblUyeler">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Ad" Type="nchar" MaxLength="20" />
+    <Property Name="Soyad" Type="nchar" MaxLength="25" />
+    <Property Name="Telefon" Type="nchar" MaxLength="11" />
+    <Property Name="Mail" Type="nchar" MaxLength="50" />
+    <Property Name="Adres" Type="nchar" MaxLength="100" />
+    <Property Name="uyeFoto" Type="varchar" MaxLength="500" />
+  </EntityType>
+  <Association Name="FK_TblEmanetler_TblKitaplar">
+    <End Role="TblKitaplar" Type="Self.TblKitaplar" Multiplicity="0..1" />
+    <End Role="TblEmanetler" Type="Self.TblEmanetler" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TblKitaplar">
+        <PropertyRef Name="kitapID" />
+      </Principal>
+      <Dependent Role="TblEmanetler">
+        <PropertyRef Name="kitapID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TblEmanetler_TblUyeler">
+    <End Role="TblUyeler" Type="Self.TblUyeler" Multiplicity="0..1" />
+    <End Role="TblEmanetler" Type="Self.TblEmanetler" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TblUyeler">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TblEmanetler">
+        <PropertyRef Name="uyeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="kutuphaneOtomasyonModelStoreContainer">
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TblEmanetler" EntityType="Self.TblEmanetler" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TblKitaplar" EntityType="Self.TblKitaplar" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TblKitapTurleri" EntityType="Self.TblKitapTurleri" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TblUyeler" EntityType="Self.TblUyeler" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_TblEmanetler_TblKitaplar" Association="Self.FK_TblEmanetler_TblKitaplar">
+      <End Role="TblKitaplar" EntitySet="TblKitaplar" />
+      <End Role="TblEmanetler" EntitySet="TblEmanetler" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TblEmanetler_TblUyeler" Association="Self.FK_TblEmanetler_TblUyeler">
+      <End Role="TblUyeler" EntitySet="TblUyeler" />
+      <End Role="TblEmanetler" EntitySet="TblEmanetler" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

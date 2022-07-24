@@ -1,0 +1,101 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="kutuphaneOtomasyonModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="TblEmanetler">
+    <Key>
+      <PropertyRef Name="EmanetNo" />
+    </Key>
+    <Property Name="EmanetNo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="uyeID" Type="Int32" />
+    <Property Name="kitapID" Type="Int32" />
+    <Property Name="EmanetVermeTarihi" Type="DateTime" Precision="0" />
+    <Property Name="EmanetAlmaTarihi" Type="DateTime" Precision="0" />
+    <Property Name="EmanetIslemTarihi" Type="DateTime" Precision="3" />
+    <Property Name="EmanetDurum" Type="Boolean" />
+    <NavigationProperty Name="TblKitaplar" Relationship="Self.FK_TblEmanetler_TblKitaplar" FromRole="TblEmanetler" ToRole="TblKitaplar" />
+    <NavigationProperty Name="TblUyeler" Relationship="Self.FK_TblEmanetler_TblUyeler" FromRole="TblEmanetler" ToRole="TblUyeler" />
+  </EntityType>
+  <EntityType Name="TblKitaplar">
+    <Key>
+      <PropertyRef Name="kitapID" />
+    </Key>
+    <Property Name="kitapID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="kitapAd" Type="String" MaxLength="60" FixedLength="true" Unicode="true" />
+    <Property Name="kitapYazari" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+    <Property Name="kitapTuru" Type="String" MaxLength="25" FixedLength="true" Unicode="true" />
+    <Property Name="kitapBaskiYili" Type="DateTime" Precision="0" />
+    <Property Name="kitapDili" Type="String" MaxLength="25" FixedLength="true" Unicode="true" />
+    <Property Name="YayinEvi" Type="String" MaxLength="30" FixedLength="true" Unicode="true" />
+    <Property Name="Aciklama" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
+    <Property Name="kitapFoto" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="TblEmanetler" Relationship="Self.FK_TblEmanetler_TblKitaplar" FromRole="TblKitaplar" ToRole="TblEmanetler" />
+  </EntityType>
+  <EntityType Name="TblKitapTurleri">
+    <Key>
+      <PropertyRef Name="turID" />
+    </Key>
+    <Property Name="turID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="kitapTuru" Type="String" MaxLength="25" FixedLength="true" Unicode="true" />
+  </EntityType>
+  <EntityType Name="TblUyeler">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Ad" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+    <Property Name="Soyad" Type="String" MaxLength="25" FixedLength="true" Unicode="true" />
+    <Property Name="Telefon" Type="String" MaxLength="11" FixedLength="true" Unicode="true" />
+    <Property Name="Mail" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+    <Property Name="Adres" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
+    <Property Name="uyeFoto" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="TblEmanetler" Relationship="Self.FK_TblEmanetler_TblUyeler" FromRole="TblUyeler" ToRole="TblEmanetler" />
+  </EntityType>
+  <Association Name="FK_TblEmanetler_TblKitaplar">
+    <End Role="TblKitaplar" Type="Self.TblKitaplar" Multiplicity="0..1" />
+    <End Role="TblEmanetler" Type="Self.TblEmanetler" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TblKitaplar">
+        <PropertyRef Name="kitapID" />
+      </Principal>
+      <Dependent Role="TblEmanetler">
+        <PropertyRef Name="kitapID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TblEmanetler_TblUyeler">
+    <End Role="TblUyeler" Type="Self.TblUyeler" Multiplicity="0..1" />
+    <End Role="TblEmanetler" Type="Self.TblEmanetler" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TblUyeler">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TblEmanetler">
+        <PropertyRef Name="uyeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="kutuphaneOtomasyonEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+    <EntitySet Name="TblEmanetler" EntityType="Self.TblEmanetler" />
+    <EntitySet Name="TblKitaplar" EntityType="Self.TblKitaplar" />
+    <EntitySet Name="TblKitapTurleri" EntityType="Self.TblKitapTurleri" />
+    <EntitySet Name="TblUyeler" EntityType="Self.TblUyeler" />
+    <AssociationSet Name="FK_TblEmanetler_TblKitaplar" Association="Self.FK_TblEmanetler_TblKitaplar">
+      <End Role="TblKitaplar" EntitySet="TblKitaplar" />
+      <End Role="TblEmanetler" EntitySet="TblEmanetler" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TblEmanetler_TblUyeler" Association="Self.FK_TblEmanetler_TblUyeler">
+      <End Role="TblUyeler" EntitySet="TblUyeler" />
+      <End Role="TblEmanetler" EntitySet="TblEmanetler" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
