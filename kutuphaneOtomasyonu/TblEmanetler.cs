@@ -16,7 +16,7 @@ namespace kutuphaneOtomasyonu
     {
         public int EmanetNo { get; set; }
         public Nullable<int> uyeID { get; set; }
-        public Nullable<int> kitapID { get; set; }
+        public Nullable<int> kitapId { get; set; }
         public Nullable<System.DateTime> EmanetVermeTarihi { get; set; }
         public Nullable<System.DateTime> EmanetAlmaTarihi { get; set; }
         public Nullable<System.DateTime> EmanetIslemTarihi { get; set; }

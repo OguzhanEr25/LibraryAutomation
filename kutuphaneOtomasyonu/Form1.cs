@@ -21,7 +21,7 @@ namespace kutuphaneOtomasyonu
         FrmKitaplar frm1;
         private void BtnKitaplar_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            // ana formdan kitaplar sekmesini bir kere açma ve açılıp kapatılmışsa tekrar açma şartı
+            // Kitaplar formunun ana form üzerinden açma şartı
             if (frm1 == null || frm1.IsDisposed)
             {
                 frm1 = new FrmKitaplar();
@@ -38,6 +38,7 @@ namespace kutuphaneOtomasyonu
         FrmUyeler frm2;
         private void BtnUyeler_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            // Üyeler formunu ana form sekmesi üzerinden açma şartı
             if (frm2 == null || frm2.IsDisposed)
             {
                 frm2 = new FrmUyeler();
@@ -49,11 +50,24 @@ namespace kutuphaneOtomasyonu
         FrmEmanetler frm3;
         private void btnEmanetler_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            // Emanetler formunu ana form üzerinden açma şartı
             if (frm3 == null || frm3.IsDisposed)
             {
                 frm3 = new FrmEmanetler();
                 frm3.MdiParent = this;
                 frm3.Show();
+            }
+        }
+
+        FrmAdmin frm4;
+        private void btnAyarlar_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            // Ayarlar formunu ana form üzerinden açma şartı
+            if (frm4 == null || frm4.IsDisposed)
+            {
+                frm4 = new FrmAdmin();
+                frm4.MdiParent = this;
+                frm4.Show();
             }
         }
     }

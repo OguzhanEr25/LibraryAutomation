@@ -87,3 +87,6 @@ C:\Users\oguz_\source\repos\kutuphaneOtomasyonu\kutuphaneOtomasyonu\bin\Debug\En
 C:\Users\oguz_\source\repos\kutuphaneOtomasyonu\kutuphaneOtomasyonu\bin\Debug\EntityFramework.xml
 C:\Users\oguz_\source\repos\kutuphaneOtomasyonu\kutuphaneOtomasyonu\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\oguz_\source\repos\kutuphaneOtomasyonu\kutuphaneOtomasyonu\obj\Debug\kutuphaneOtomasyonu.Formlar.FrmEmanetler.resources
+C:\Users\oguz_\source\repos\kutuphaneOtomasyonu\kutuphaneOtomasyonu\obj\Debug\kutuphaneOtomasyonu.Formlar.FrmAdmin.resources
+C:\Users\oguz_\source\repos\kutuphaneOtomasyonu\kutuphaneOtomasyonu\obj\Debug\kutuphaneOtomasyonu.Formlar.FrmLogin.resources
+C:\Users\oguz_\source\repos\kutuphaneOtomasyonu\kutuphaneOtomasyonu\obj\Debug\kutuphaneOtomasyonu.Formlar.FrmGiris.resources

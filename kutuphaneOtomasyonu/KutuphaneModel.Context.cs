@@ -13,10 +13,10 @@ namespace kutuphaneOtomasyonu
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class kutuphaneOtomasyonEntities : DbContext
+    public partial class DbKutuphaneEntities : DbContext
     {
-        public kutuphaneOtomasyonEntities()
-            : base("name=kutuphaneOtomasyonEntities")
+        public DbKutuphaneEntities()
+            : base("name=DbKutuphaneEntities")
         {
         }
     

@@ -36,7 +36,6 @@ namespace kutuphaneOtomasyonu.Formlar
             this.xtraTabPage2 = new DevExpress.XtraTab.XtraTabPage();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.chDurum = new DevExpress.XtraEditors.CheckEdit();
-            this.txtEmntVerme = new DevExpress.XtraEditors.TextEdit();
             this.txtIslem = new DevExpress.XtraEditors.TextEdit();
             this.LblKitapDili = new DevExpress.XtraEditors.LabelControl();
             this.LblYayinEvi = new DevExpress.XtraEditors.LabelControl();
@@ -46,13 +45,14 @@ namespace kutuphaneOtomasyonu.Formlar
             this.BtnEkle = new DevExpress.XtraEditors.SimpleButton();
             this.txtUyeID = new DevExpress.XtraEditors.TextEdit();
             this.txtKitapID = new DevExpress.XtraEditors.TextEdit();
-            this.txtEmntAlma = new DevExpress.XtraEditors.TextEdit();
             this.txtEmntNo = new DevExpress.XtraEditors.TextEdit();
             this.LblBaskiYil = new DevExpress.XtraEditors.LabelControl();
             this.LblKitapAd = new DevExpress.XtraEditors.LabelControl();
             this.LblKitapTur = new DevExpress.XtraEditors.LabelControl();
             this.LblYazar = new DevExpress.XtraEditors.LabelControl();
             this.LblID = new DevExpress.XtraEditors.LabelControl();
+            this.dtEmanetVerme = new DevExpress.XtraEditors.DateEdit();
+            this.dtEmanetAlma = new DevExpress.XtraEditors.DateEdit();
             ((System.ComponentModel.ISupportInitialize)(this.gridEmanetler)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).BeginInit();
@@ -61,12 +61,14 @@ namespace kutuphaneOtomasyonu.Formlar
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chDurum.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtEmntVerme.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtIslem.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtUyeID.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtKitapID.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtEmntAlma.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtEmntNo.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtEmanetVerme.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtEmanetVerme.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtEmanetAlma.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtEmanetAlma.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // gridEmanetler
@@ -106,8 +108,9 @@ namespace kutuphaneOtomasyonu.Formlar
             // 
             // groupControl1
             // 
+            this.groupControl1.Controls.Add(this.dtEmanetAlma);
+            this.groupControl1.Controls.Add(this.dtEmanetVerme);
             this.groupControl1.Controls.Add(this.chDurum);
-            this.groupControl1.Controls.Add(this.txtEmntVerme);
             this.groupControl1.Controls.Add(this.txtIslem);
             this.groupControl1.Controls.Add(this.LblKitapDili);
             this.groupControl1.Controls.Add(this.LblYayinEvi);
@@ -117,7 +120,6 @@ namespace kutuphaneOtomasyonu.Formlar
             this.groupControl1.Controls.Add(this.BtnEkle);
             this.groupControl1.Controls.Add(this.txtUyeID);
             this.groupControl1.Controls.Add(this.txtKitapID);
-            this.groupControl1.Controls.Add(this.txtEmntAlma);
             this.groupControl1.Controls.Add(this.txtEmntNo);
             this.groupControl1.Controls.Add(this.LblBaskiYil);
             this.groupControl1.Controls.Add(this.LblKitapAd);
@@ -138,13 +140,6 @@ namespace kutuphaneOtomasyonu.Formlar
             this.chDurum.Properties.Caption = "";
             this.chDurum.Size = new System.Drawing.Size(75, 20);
             this.chDurum.TabIndex = 29;
-            // 
-            // txtEmntVerme
-            // 
-            this.txtEmntVerme.Location = new System.Drawing.Point(163, 148);
-            this.txtEmntVerme.Name = "txtEmntVerme";
-            this.txtEmntVerme.Size = new System.Drawing.Size(100, 20);
-            this.txtEmntVerme.TabIndex = 28;
             // 
             // txtIslem
             // 
@@ -227,13 +222,6 @@ namespace kutuphaneOtomasyonu.Formlar
             this.txtKitapID.Size = new System.Drawing.Size(100, 20);
             this.txtKitapID.TabIndex = 11;
             // 
-            // txtEmntAlma
-            // 
-            this.txtEmntAlma.Location = new System.Drawing.Point(163, 182);
-            this.txtEmntAlma.Name = "txtEmntAlma";
-            this.txtEmntAlma.Size = new System.Drawing.Size(100, 20);
-            this.txtEmntAlma.TabIndex = 8;
-            // 
             // txtEmntNo
             // 
             this.txtEmntNo.EditValue = "";
@@ -293,6 +281,30 @@ namespace kutuphaneOtomasyonu.Formlar
             this.LblID.TabIndex = 0;
             this.LblID.Text = "Emanet Numarası :  ";
             // 
+            // dtEmanetVerme
+            // 
+            this.dtEmanetVerme.EditValue = null;
+            this.dtEmanetVerme.Location = new System.Drawing.Point(163, 148);
+            this.dtEmanetVerme.Name = "dtEmanetVerme";
+            this.dtEmanetVerme.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dtEmanetVerme.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dtEmanetVerme.Size = new System.Drawing.Size(100, 20);
+            this.dtEmanetVerme.TabIndex = 30;
+            // 
+            // dtEmanetAlma
+            // 
+            this.dtEmanetAlma.EditValue = null;
+            this.dtEmanetAlma.Location = new System.Drawing.Point(163, 182);
+            this.dtEmanetAlma.Name = "dtEmanetAlma";
+            this.dtEmanetAlma.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dtEmanetAlma.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dtEmanetAlma.Size = new System.Drawing.Size(100, 20);
+            this.dtEmanetAlma.TabIndex = 31;
+            // 
             // FrmEmanetler
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -312,12 +324,14 @@ namespace kutuphaneOtomasyonu.Formlar
             this.groupControl1.ResumeLayout(false);
             this.groupControl1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chDurum.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtEmntVerme.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtIslem.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtUyeID.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtKitapID.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtEmntAlma.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtEmntNo.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtEmanetVerme.Properties.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtEmanetVerme.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtEmanetAlma.Properties.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtEmanetAlma.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -330,7 +344,6 @@ namespace kutuphaneOtomasyonu.Formlar
         private DevExpress.XtraTab.XtraTabPage xtraTabPage2;
         private DevExpress.XtraEditors.GroupControl groupControl1;
         private DevExpress.XtraEditors.CheckEdit chDurum;
-        private DevExpress.XtraEditors.TextEdit txtEmntVerme;
         private DevExpress.XtraEditors.TextEdit txtIslem;
         private DevExpress.XtraEditors.LabelControl LblKitapDili;
         private DevExpress.XtraEditors.LabelControl LblYayinEvi;
@@ -340,12 +353,13 @@ namespace kutuphaneOtomasyonu.Formlar
         private DevExpress.XtraEditors.SimpleButton BtnEkle;
         private DevExpress.XtraEditors.TextEdit txtUyeID;
         private DevExpress.XtraEditors.TextEdit txtKitapID;
-        private DevExpress.XtraEditors.TextEdit txtEmntAlma;
         private DevExpress.XtraEditors.TextEdit txtEmntNo;
         private DevExpress.XtraEditors.LabelControl LblBaskiYil;
         private DevExpress.XtraEditors.LabelControl LblKitapAd;
         private DevExpress.XtraEditors.LabelControl LblKitapTur;
         private DevExpress.XtraEditors.LabelControl LblYazar;
         private DevExpress.XtraEditors.LabelControl LblID;
+        private DevExpress.XtraEditors.DateEdit dtEmanetAlma;
+        private DevExpress.XtraEditors.DateEdit dtEmanetVerme;
     }
 }

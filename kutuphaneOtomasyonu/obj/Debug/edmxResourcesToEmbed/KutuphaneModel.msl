@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="kutuphaneOtomasyonModelStoreContainer" CdmEntityContainer="kutuphaneOtomasyonEntities">
+  <EntityContainerMapping StorageEntityContainer="kutuphaneOtomasyonModelStoreContainer" CdmEntityContainer="DbKutuphaneEntities">
     <EntitySetMapping Name="sysdiagrams">
       <EntityTypeMapping TypeName="kutuphaneOtomasyonModel.sysdiagrams">
         <MappingFragment StoreEntitySet="sysdiagrams">
@@ -17,7 +17,7 @@
         <MappingFragment StoreEntitySet="TblEmanetler">
           <ScalarProperty Name="EmanetNo" ColumnName="EmanetNo" />
           <ScalarProperty Name="uyeID" ColumnName="uyeID" />
-          <ScalarProperty Name="kitapID" ColumnName="kitapID" />
+          <ScalarProperty Name="kitapId" ColumnName="kitapId" />
           <ScalarProperty Name="EmanetVermeTarihi" ColumnName="EmanetVermeTarihi" />
           <ScalarProperty Name="EmanetAlmaTarihi" ColumnName="EmanetAlmaTarihi" />
           <ScalarProperty Name="EmanetIslemTarihi" ColumnName="EmanetIslemTarihi" />

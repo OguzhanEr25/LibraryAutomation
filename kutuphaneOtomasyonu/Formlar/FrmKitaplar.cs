@@ -19,6 +19,7 @@ namespace kutuphaneOtomasyonu.Formlar
             InitializeComponent();
         }
 
+        DbKutuphaneEntities db =new DbKutuphaneEntities();
         SqlBaglantisi bgl = new SqlBaglantisi();
         
         void Listele()
@@ -54,7 +55,7 @@ namespace kutuphaneOtomasyonu.Formlar
             txtKitapAd.Text = "";
             txtYazar.Text = "";
             cmBoxTur.Text = "";
-            txtBaskiYili.Text = "";
+            dateBaskiYili.Text = "";
             LblKitapDili.Text = "";
             txtYayinEvi.Text = "";
             rchAciklama.Text = "";
@@ -88,7 +89,7 @@ namespace kutuphaneOtomasyonu.Formlar
                 txtKitapAd.Text = dr["kitapAd"].ToString();
                 txtYazar.Text = dr["kitapYazari"].ToString();
                 cmBoxTur.Text = dr["kitapTuru"].ToString();
-                txtBaskiYili.Text = dr["kitapBaskiYili"].ToString();
+                dateBaskiYili.Text = dr["kitapBaskiYili"].ToString();
                 txtKitapDili .Text = dr["kitapDili"].ToString();
                 txtYayinEvi.Text = dr["YayinEvi"].ToString();
                 rchAciklama.Text = dr["Aciklama"].ToString();
@@ -106,7 +107,7 @@ namespace kutuphaneOtomasyonu.Formlar
                 txtKitapAd.Text = dr2["kitapAd"].ToString();
                 txtYazar.Text = dr2["kitapYazari"].ToString();
                 cmBoxTur.Text = dr2["kitapTuru"].ToString();
-                txtBaskiYili.Text = dr2["kitapBaskiYili"].ToString();
+                dateBaskiYili.Text = dr2["kitapBaskiYili"].ToString();
                 txtKitapDili.Text = dr2["kitapDili"].ToString();
                 txtYayinEvi.Text = dr2["YayinEvi"].ToString();
                 rchAciklama.Text = dr2["Aciklama"].ToString();
@@ -124,7 +125,7 @@ namespace kutuphaneOtomasyonu.Formlar
                 txtKitapAd.Text = dr3["kitapAd"].ToString();
                 txtYazar.Text = dr3["kitapYazari"].ToString();
                 cmBoxTur.Text = dr3["kitapTuru"].ToString();
-                txtBaskiYili.Text = dr3["kitapBaskiYili"].ToString();
+                dateBaskiYili.Text = dr3["kitapBaskiYili"].ToString();
                 txtKitapDili.Text = dr3["kitapDili"].ToString();
                 txtYayinEvi.Text = dr3["YayinEvi"].ToString();
                 rchAciklama.Text = dr3["Aciklama"].ToString();
@@ -142,7 +143,7 @@ namespace kutuphaneOtomasyonu.Formlar
                 txtKitapAd.Text = dr4["kitapAd"].ToString();
                 txtYazar.Text = dr4["kitapYazari"].ToString();
                 cmBoxTur.Text = dr4["kitapTuru"].ToString();
-                txtBaskiYili.Text = dr4["kitapBaskiYili"].ToString();
+                dateBaskiYili.Text = dr4["kitapBaskiYili"].ToString();
                 txtKitapDili.Text = dr4["kitapDili"].ToString();
                 txtYayinEvi.Text = dr4["YayinEvi"].ToString();
                 rchAciklama.Text = dr4["Aciklama"].ToString();
@@ -160,7 +161,7 @@ namespace kutuphaneOtomasyonu.Formlar
                 txtKitapAd.Text = dr5["kitapAd"].ToString();
                 txtYazar.Text = dr5["kitapYazari"].ToString();
                 cmBoxTur.Text = dr5["kitapTuru"].ToString();
-                txtBaskiYili.Text = dr5["kitapBaskiYili"].ToString();
+                dateBaskiYili.Text = dr5["kitapBaskiYili"].ToString();
                 txtKitapDili.Text = dr5["kitapDili"].ToString();
                 txtYayinEvi.Text = dr5["YayinEvi"].ToString();
                 rchAciklama.Text = dr5["Aciklama"].ToString();
@@ -171,19 +172,29 @@ namespace kutuphaneOtomasyonu.Formlar
 
         private void BtnEkle_Click(object sender, EventArgs e)
         {
-            SqlCommand ekle = new SqlCommand("Insert into TblKitaplar (kitapAd,kitapYazari,kitapTuru,kitapBaskiYili,kitapDili,YayinEvi," +
-                "Aciklama,kitapFoto)" +
-                " values(@p1,@p2,@p3,@p4,@p5,@p6,@p7,@p8)", bgl.Baglanti());
-            ekle.Parameters.AddWithValue("@p1", txtKitapAd.Text);
-            ekle.Parameters.AddWithValue("@p2", txtYazar.Text);
-            ekle.Parameters.AddWithValue("@p3", cmBoxTur.Text);
-            ekle.Parameters.AddWithValue("@p4", txtBaskiYili.Text);
-            ekle.Parameters.AddWithValue("@p5", txtKitapDili.Text);
-            ekle.Parameters.AddWithValue("@p6", txtYayinEvi.Text);
-            ekle.Parameters.AddWithValue("@p7", rchAciklama.Text);
-            ekle.Parameters.AddWithValue("@p8", Path.GetFileName(yeniYol));
-            ekle.ExecuteNonQuery();
-            bgl.Baglanti().Close();
+            //SqlCommand ekle = new SqlCommand("Insert into TblKitaplar (kitapAd,kitapYazari,kitapTuru,kitapBaskiYili,kitapDili,YayinEvi," +
+            //    "Aciklama,kitapFoto)" +
+            //    " values(@p1,@p2,@p3,@p4,@p5,@p6,@p7,@p8)", bgl.Baglanti());
+            //ekle.Parameters.AddWithValue("@p1", txtKitapAd.Text);
+            //ekle.Parameters.AddWithValue("@p2", txtYazar.Text);
+            //ekle.Parameters.AddWithValue("@p3", cmBoxTur.Text);
+            //ekle.Parameters.AddWithValue("@p4", dateBaskiYili.Text);
+            //ekle.Parameters.AddWithValue("@p5", txtKitapDili.Text);
+            //ekle.Parameters.AddWithValue("@p6", txtYayinEvi.Text);
+            //ekle.Parameters.AddWithValue("@p7", rchAciklama.Text);
+            //ekle.Parameters.AddWithValue("@p8", Path.GetFileName(yeniYol));
+            //ekle.ExecuteNonQuery();
+            //bgl.Baglanti().Close();
+            TblKitaplar ekle = new TblKitaplar();
+            ekle.kitapAd = txtKitapAd.Text;
+            ekle.kitapYazari = txtYazar.Text;
+            ekle.kitapTuru = cmBoxTur.Text;
+            ekle.kitapBaskiYili = Convert.ToDateTime(dateBaskiYili.Text);
+            ekle.kitapDili = txtKitapDili.Text;
+            ekle.YayinEvi = txtYayinEvi.Text;
+            ekle.Aciklama = rchAciklama.Text;
+            db.TblKitaplar.Add(ekle);
+            db.SaveChanges();
             MessageBox.Show("Kİtap eklendi", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
             Listele();
         }
@@ -213,18 +224,29 @@ namespace kutuphaneOtomasyonu.Formlar
 
         private void BtnGüncelle_Click(object sender, EventArgs e)
         {
-            SqlCommand guncelle = new SqlCommand("Update TblKitaplar set kitapAd=@p1, kitapYazari=@p2, kitapTuru=@p3, kitapBaskiYili=@p4," +
-                " kitapDili=@p5, YayinEvi=@p6, Aciklama=@p7, kitapFoto=@p8 Where kitapID=@p9", bgl.Baglanti());
-            guncelle.Parameters.AddWithValue("@p1", txtKitapAd.Text);
-            guncelle.Parameters.AddWithValue("@p2", txtYazar.Text);
-            guncelle.Parameters.AddWithValue("@p3", cmBoxTur.Text);
-            guncelle.Parameters.AddWithValue("@p4", txtBaskiYili.Text);
-            guncelle.Parameters.AddWithValue("@p5", txtKitapDili.Text);
-            guncelle.Parameters.AddWithValue("@p6", txtYayinEvi.Text);
-            guncelle.Parameters.AddWithValue("@p7", rchAciklama.Text);
-            guncelle.Parameters.AddWithValue("@p8", Path.GetFileName(yeniYol));
-            guncelle.Parameters.AddWithValue("@p9", txtID.Text);
-            guncelle.ExecuteNonQuery();
+            //SqlCommand guncelle = new SqlCommand("Update TblKitaplar set kitapAd=@p1, kitapYazari=@p2, kitapTuru=@p3, kitapBaskiYili=@p4," +
+            //    " kitapDili=@p5, YayinEvi=@p6, Aciklama=@p7, kitapFoto=@p8 Where kitapID=@p9", bgl.Baglanti());
+            //guncelle.Parameters.AddWithValue("@p1", txtKitapAd.Text);
+            //guncelle.Parameters.AddWithValue("@p2", txtYazar.Text);
+            //guncelle.Parameters.AddWithValue("@p3", cmBoxTur.Text);
+            //guncelle.Parameters.AddWithValue("@p4", dateBaskiYili.Text);
+            //guncelle.Parameters.AddWithValue("@p5", txtKitapDili.Text);
+            //guncelle.Parameters.AddWithValue("@p6", txtYayinEvi.Text);
+            //guncelle.Parameters.AddWithValue("@p7", rchAciklama.Text);
+            //guncelle.Parameters.AddWithValue("@p8", Path.GetFileName(yeniYol));
+            //guncelle.Parameters.AddWithValue("@p9", txtID.Text);
+            //guncelle.ExecuteNonQuery();
+            //bgl.Baglanti().Close();
+            int id = Convert.ToInt32(txtID.Text);
+            var guncelle = db.TblKitaplar.Find(id);
+            guncelle.kitapAd = txtKitapAd.Text;
+            guncelle.kitapYazari = txtYazar.Text;
+            guncelle.kitapTuru = cmBoxTur.Text;
+            guncelle.kitapBaskiYili = Convert.ToDateTime(dateBaskiYili.Text);
+            guncelle.YayinEvi = txtYayinEvi.Text;
+            guncelle.Aciklama = rchAciklama.Text;
+            guncelle.kitapFoto = Path.GetFileName(yeniYol);
+            db.SaveChanges();
             bgl.Baglanti().Close();
             MessageBox.Show("Kitap güncellendi", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
             Listele();

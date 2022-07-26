@@ -32,6 +32,7 @@ namespace kutuphaneOtomasyonu
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.btnAyarlar = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem5 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem6 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem7 = new DevExpress.XtraBars.BarButtonItem();
@@ -50,10 +51,17 @@ namespace kutuphaneOtomasyonu
             // ribbonPageGroup2
             // 
             this.ribbonPageGroup2.AllowTextClipping = false;
-            this.ribbonPageGroup2.ItemLinks.Add(this.barButtonItem5);
-            this.ribbonPageGroup2.ItemLinks.Add(this.barButtonItem6);
-            this.ribbonPageGroup2.ItemLinks.Add(this.barButtonItem7);
+            this.ribbonPageGroup2.ItemLinks.Add(this.btnAyarlar);
             this.ribbonPageGroup2.Name = "ribbonPageGroup2";
+            // 
+            // btnAyarlar
+            // 
+            this.btnAyarlar.Caption = "Admin";
+            this.btnAyarlar.Id = 8;
+            this.btnAyarlar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnAyarlar.ImageOptions.Image")));
+            this.btnAyarlar.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnAyarlar.ImageOptions.LargeImage")));
+            this.btnAyarlar.Name = "btnAyarlar";
+            this.btnAyarlar.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnAyarlar_ItemClick);
             // 
             // barButtonItem5
             // 
@@ -91,13 +99,17 @@ namespace kutuphaneOtomasyonu
             this.btnEmanetler,
             this.barButtonItem5,
             this.barButtonItem6,
-            this.barButtonItem7});
+            this.barButtonItem7,
+            this.btnAyarlar});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.MaxItemId = 8;
+            this.ribbonControl1.MaxItemId = 9;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1});
+            this.ribbonControl1.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.Office2019;
+            this.ribbonControl1.ShowToolbarCustomizeItem = false;
             this.ribbonControl1.Size = new System.Drawing.Size(1193, 150);
+            this.ribbonControl1.Toolbar.ShowCustomizeItem = false;
             // 
             // barButtonItem1
             // 
@@ -129,8 +141,8 @@ namespace kutuphaneOtomasyonu
             // 
             this.btnEmanetler.Caption = "Emanetler Listesi";
             this.btnEmanetler.Id = 4;
-            this.btnEmanetler.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem4.ImageOptions.Image")));
-            this.btnEmanetler.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem4.ImageOptions.LargeImage")));
+            this.btnEmanetler.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnEmanetler.ImageOptions.Image")));
+            this.btnEmanetler.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnEmanetler.ImageOptions.LargeImage")));
             this.btnEmanetler.Name = "btnEmanetler";
             this.btnEmanetler.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnEmanetler_ItemClick);
             // 
@@ -163,7 +175,7 @@ namespace kutuphaneOtomasyonu
             this.Controls.Add(this.ribbonControl1);
             this.IsMdiContainer = true;
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Kütüphane Otomasyonu";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).EndInit();
@@ -186,6 +198,7 @@ namespace kutuphaneOtomasyonu
         private DevExpress.XtraBars.BarButtonItem barButtonItem6;
         private DevExpress.XtraBars.BarButtonItem barButtonItem7;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup2;
+        private DevExpress.XtraBars.BarButtonItem btnAyarlar;
     }
 }
 

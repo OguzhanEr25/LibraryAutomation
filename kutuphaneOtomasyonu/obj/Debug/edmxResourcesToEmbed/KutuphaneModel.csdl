@@ -16,7 +16,7 @@
     </Key>
     <Property Name="EmanetNo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="uyeID" Type="Int32" />
-    <Property Name="kitapID" Type="Int32" />
+    <Property Name="kitapId" Type="Int32" />
     <Property Name="EmanetVermeTarihi" Type="DateTime" Precision="0" />
     <Property Name="EmanetAlmaTarihi" Type="DateTime" Precision="0" />
     <Property Name="EmanetIslemTarihi" Type="DateTime" Precision="3" />
@@ -67,7 +67,7 @@
         <PropertyRef Name="kitapID" />
       </Principal>
       <Dependent Role="TblEmanetler">
-        <PropertyRef Name="kitapID" />
+        <PropertyRef Name="kitapId" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -83,7 +83,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <EntityContainer Name="kutuphaneOtomasyonEntities" annotation:LazyLoadingEnabled="true">
+  <EntityContainer Name="DbKutuphaneEntities" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
     <EntitySet Name="TblEmanetler" EntityType="Self.TblEmanetler" />
     <EntitySet Name="TblKitaplar" EntityType="Self.TblKitaplar" />

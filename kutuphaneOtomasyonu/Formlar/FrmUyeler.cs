@@ -22,14 +22,14 @@ namespace kutuphaneOtomasyonu.Formlar
         SqlBaglantisi bgl = new SqlBaglantisi();
         DataTable dt = new DataTable();
 
-        void Listele()
+        void Listele() // SQL deki verilerin grid üzerinde görünmesini sağlar
         {
             SqlDataAdapter da = new SqlDataAdapter("select * from TblUyeler", bgl.Baglanti());
             da.Fill(dt);
             gridControlUye.DataSource = dt;
         }
 
-        void Temizle()
+        void Temizle() // gruoup kontrolde bulunan textlerin içlerini temizler
         {
             txtAd.Text = "";
             txtSoyad.Text = "";
@@ -39,7 +39,7 @@ namespace kutuphaneOtomasyonu.Formlar
             pctBox.ImageLocation = "";
         }
 
-        private void FrmUyeler_Load(object sender, EventArgs e)
+        private void FrmUyeler_Load(object sender, EventArgs e) //Form 
         {
             Listele();
         }
@@ -77,16 +77,17 @@ namespace kutuphaneOtomasyonu.Formlar
         }
 
         public string yeniYol;
-        private void BtnResimSec_Click(object sender, EventArgs e)
+        private void BtnResimSec_Click(object sender, EventArgs e) // Dosyalardan resim seçebilmek için gereken metod
         {
             OpenFileDialog dosya =new OpenFileDialog();
-            dosya.Filter = "Resim Dosyası | *.jpg; *; *.png; *.nef | Tüm Dosyalar | *.* "; // dosya seçme özelliklerini belirleme"
+            dosya.Filter = "Resim Dosyası | *.jpg; *; *.png; *.nef | Tüm Dosyalar | *.* "; // Resim dosyası türlerini filtreleme
             dosya.ShowDialog();
             string dosyaYolu = dosya.FileName; // seçilen dosyanın dosya adı
             yeniYol = "C:\\Users\\oguz_\\source\\repos\\kutuphaneOtomasyonu\\kutuphaneOtomasyonu" + "\\Resimler\\" + Guid.NewGuid().ToString() + ".jpg";
-            File.Copy(dosyaYolu, yeniYol);
+            File.Copy(dosyaYolu, yeniYol); // Resim dosyanın yolunu yeni yola kopyalama
             pctBox.ImageLocation = yeniYol;
         }
+        // Güncelleme butonu
         private void BtnGüncelle_Click(object sender, EventArgs e)
         {
             SqlCommand guncelle = new SqlCommand("Update TblUyeler set Ad=@p1, Soyad=@p2, Telefon=@p3,Mail=@p4, Adres=@p5, uyeFoto=@p6 Where ID=@p7", bgl.Baglanti());
@@ -103,7 +104,7 @@ namespace kutuphaneOtomasyonu.Formlar
             Listele();
 
         }
-
+        // Temizle butonu
         private void BtnTemizle_Click(object sender, EventArgs e)
         {
             Temizle();
@@ -111,6 +112,7 @@ namespace kutuphaneOtomasyonu.Formlar
 
         private void BtnSil_Click(object sender, EventArgs e)
         {
+            // Verinin ID'sine bağlı bütün verileri siler
             SqlCommand sil = new SqlCommand("Delete from TblUyeler Where ID=@p1", bgl.Baglanti());
             sil.Parameters.AddWithValue("@P1", txtID.Text);
             sil.ExecuteNonQuery();
