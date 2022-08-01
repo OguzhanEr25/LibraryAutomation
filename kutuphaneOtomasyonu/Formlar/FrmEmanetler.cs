@@ -25,27 +25,29 @@ namespace kutuphaneOtomasyonu.Formlar
         DataTable dt = new DataTable();
         void Listele()
         {
-            // Procedure ile kitaplar tablosunu çağırma
-            //SqlDataAdapter da = new SqlDataAdapter("Execute KitapEmanetler ", bgl.Baglanti());
-            //da.Fill(dt);
+            //Procedure ile kitaplar tablosunu çağırma
+            SqlDataAdapter da = new SqlDataAdapter("Execute KitapEmanetler ", bgl.Baglanti());
+            da.Fill(dt);
 
-            //gridEmanetler.DataSource = dt;
+            gridEmanetler.DataSource = dt;
 
             // Entities ile verileri çağırma
-            var deger = (from item in db.TblEmanetler
-                         select new
-                         {
-                             item.EmanetNo,
-                             item.uyeID,
-                             item.TblUyeler.Ad,
-                             item.kitapId,
-                             item.TblKitaplar.kitapAd,
-                             item.EmanetVermeTarihi,
-                             item.EmanetAlmaTarihi,
-                             item.EmanetIslemTarihi,
-                             item.EmanetDurum
-                         });
-            gridEmanetler.DataSource = deger.ToList();
+            //var deger = (from item in db.TblEmanetler
+            //             select new
+            //             {
+            //                 item.EmanetNo,
+            //                 item.uyeID,
+            //                 item.TblUyeler.Ad,
+            //                 item.kitapId,
+            //                 item.TblKitaplar.kitapAd,
+            //                 item.EmanetVermeTarihi,
+            //                 item.EmanetAlmaTarihi,
+            //                 item.EmanetIslemTarihi,
+            //                 item.EmanetDurum
+            //             });
+            //gridEmanetler.DataSource = deger.ToList();
+
+            //gridEmanetler.DataSource = db.TblEmanetler.ToList();
         }
 
         void Temizle()
@@ -140,7 +142,7 @@ namespace kutuphaneOtomasyonu.Formlar
             item.uyeID = Convert.ToInt32(txtUyeID.Text.ToString());
             item.kitapId = Convert.ToInt32(txtKitapID.Text.ToString());
             item.EmanetVermeTarihi = Convert.ToDateTime(dtEmanetVerme.Text);
-            
+            // tarihi null alma araştır
             item.EmanetAlmaTarihi = Convert.ToDateTime(dtEmanetAlma.Text);
             item.EmanetIslemTarihi = Convert.ToDateTime(txtIslem.Text);
             // checkEdit durum kontrol
@@ -192,6 +194,22 @@ namespace kutuphaneOtomasyonu.Formlar
             bgl.Baglanti().Close();
             MessageBox.Show("Emanet Bilgileri silindi", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             Listele();
+        }
+
+        private void BtnSirala_Click(object sender, EventArgs e)
+        {
+            // Sadece emanet alınmış kitapları listele
+            if (radioEmntAlinan.Checked == true)
+            {
+                List<TblEmanetler> list = db.TblEmanetler.Where(p => p.EmanetDurum == true).ToList();
+                gridEmanetler.DataSource = list;
+            }
+            if(radioEmntVerilen.Checked == true)
+            {
+                // Sadece emanet verilen kitapları listele
+                List<TblEmanetler> list2 = db.TblEmanetler.Where(p => p.EmanetDurum == false).ToList();
+                gridEmanetler.DataSource = list2;
+            }
         }
     }
 }

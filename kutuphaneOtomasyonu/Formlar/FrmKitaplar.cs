@@ -185,6 +185,8 @@ namespace kutuphaneOtomasyonu.Formlar
             //ekle.Parameters.AddWithValue("@p8", Path.GetFileName(yeniYol));
             //ekle.ExecuteNonQuery();
             //bgl.Baglanti().Close();
+
+            // Entities ile veri ekleme
             TblKitaplar ekle = new TblKitaplar();
             ekle.kitapAd = txtKitapAd.Text;
             ekle.kitapYazari = txtYazar.Text;
@@ -203,7 +205,7 @@ namespace kutuphaneOtomasyonu.Formlar
         private void BtnResimSec_Click(object sender, EventArgs e)  
         {
             OpenFileDialog dosya = new OpenFileDialog();
-            dosya.Filter = "Resim Dosyası |*.jpg;*.png;*.nef | Tüm Dosyalar | *.*";
+            dosya.Filter = "Resim Dosyası |*.jpg;*.png;*.nef | Tüm Dosyalar | *.*"; // Dosya uzantısı için filtreleme 
             dosya.ShowDialog();
             string dosyaYolu = dosya.FileName;
             yeniYol = "C:\\Users\\oguz_\\source\\repos\\kutuphaneOtomasyonu\\kutuphaneOtomasyonu\\"
@@ -214,6 +216,7 @@ namespace kutuphaneOtomasyonu.Formlar
 
         private void BtnSil_Click(object sender, EventArgs e)
         {
+            // ID'ye bağlı bütün verileri siler
             SqlCommand sil = new SqlCommand("Delete from TblKitaplar Where kitapID=@p1", bgl.Baglanti());
             sil.Parameters.AddWithValue("@P1", txtID.Text);
             sil.ExecuteNonQuery();
@@ -237,6 +240,8 @@ namespace kutuphaneOtomasyonu.Formlar
             //guncelle.Parameters.AddWithValue("@p9", txtID.Text);
             //guncelle.ExecuteNonQuery();
             //bgl.Baglanti().Close();
+            
+            //Entities ile ID'ye göre veri güncelleme
             int id = Convert.ToInt32(txtID.Text);
             var guncelle = db.TblKitaplar.Find(id);
             guncelle.kitapAd = txtKitapAd.Text;

@@ -67,6 +67,8 @@ namespace kutuphaneOtomasyonu.Formlar
             // 
             this.txtSifre.Location = new System.Drawing.Point(406, 203);
             this.txtSifre.Name = "txtSifre";
+            this.txtSifre.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
+            this.txtSifre.Properties.Appearance.Options.UseBackColor = true;
             this.txtSifre.Properties.UseSystemPasswordChar = true;
             this.txtSifre.Size = new System.Drawing.Size(100, 20);
             this.txtSifre.TabIndex = 2;
@@ -84,7 +86,7 @@ namespace kutuphaneOtomasyonu.Formlar
             // MscKullanici
             // 
             this.MscKullanici.Location = new System.Drawing.Point(157, 203);
-            this.MscKullanici.Mask = "00000000000";
+            this.MscKullanici.Mask = "00000";
             this.MscKullanici.Name = "MscKullanici";
             this.MscKullanici.Size = new System.Drawing.Size(125, 20);
             this.MscKullanici.TabIndex = 4;
@@ -102,7 +104,9 @@ namespace kutuphaneOtomasyonu.Formlar
             // 
             // smpButtonGiris
             // 
-            this.smpButtonGiris.Location = new System.Drawing.Point(197, 286);
+            this.smpButtonGiris.Appearance.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.smpButtonGiris.Appearance.Options.UseFont = true;
+            this.smpButtonGiris.Location = new System.Drawing.Point(203, 285);
             this.smpButtonGiris.Name = "smpButtonGiris";
             this.smpButtonGiris.Size = new System.Drawing.Size(122, 42);
             this.smpButtonGiris.TabIndex = 6;
