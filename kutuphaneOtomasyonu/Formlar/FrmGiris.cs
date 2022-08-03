@@ -22,7 +22,7 @@ namespace kutuphaneOtomasyonu.Formlar
 
         private void smpButtonGiris_Click(object sender, EventArgs e)
         {
-            SqlCommand giris = new SqlCommand("SELECT kullaniciID,kullaniciSifre FROM TblAdmin WHERE kullaniciID =@p1 and kullaniciSifre =@p2", bgl.Baglanti());
+            SqlCommand giris = new SqlCommand("SELECT kullaniciID,kullaniciSifre FROM TblAdmin WHERE kullaniciID = @p1 and kullaniciSifre = @p2", bgl.Baglanti());
             giris.Parameters.AddWithValue("@p1", MscKullanici.Text);
             giris.Parameters.AddWithValue("@p2", txtSifre.Text);
             SqlDataReader dr = giris.ExecuteReader();
@@ -39,6 +39,11 @@ namespace kutuphaneOtomasyonu.Formlar
                 txtSifre.Text = "";
             }
             bgl.Baglanti().Close(); 
+        }
+
+        private void FrmGiris_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

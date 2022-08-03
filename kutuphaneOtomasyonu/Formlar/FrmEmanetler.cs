@@ -210,6 +210,11 @@ namespace kutuphaneOtomasyonu.Formlar
                 List<TblEmanetler> list2 = db.TblEmanetler.Where(p => p.EmanetDurum == false).ToList();
                 gridEmanetler.DataSource = list2;
             }
+            if(radioTumu.Checked == true)
+            {
+                List<TblEmanetler> list3 = db.TblEmanetler.Select(x => x).ToList();
+                gridEmanetler.DataSource = list3;
+            }
         }
     }
 }

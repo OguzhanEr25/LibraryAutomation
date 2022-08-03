@@ -33,9 +33,11 @@ namespace kutuphaneOtomasyonu.Formlar
             this.xtraTabControl1 = new DevExpress.XtraTab.XtraTabControl();
             this.xtraTabPage2 = new DevExpress.XtraTab.XtraTabPage();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
+            this.dateBaskiYili = new DevExpress.XtraEditors.DateEdit();
             this.pctBox = new System.Windows.Forms.PictureBox();
             this.txtKitapDili = new DevExpress.XtraEditors.TextEdit();
             this.LblKitapDili = new DevExpress.XtraEditors.LabelControl();
+            this.cmBoxTur = new DevExpress.XtraEditors.ComboBoxEdit();
             this.txtYayinEvi = new DevExpress.XtraEditors.TextEdit();
             this.LblYayinEvi = new DevExpress.XtraEditors.LabelControl();
             this.LblAciklama = new DevExpress.XtraEditors.LabelControl();
@@ -69,15 +71,16 @@ namespace kutuphaneOtomasyonu.Formlar
             this.xtraTabPage6 = new DevExpress.XtraTab.XtraTabPage();
             this.gridSosyoloji = new DevExpress.XtraGrid.GridControl();
             this.gridView5 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.cmBoxTur = new DevExpress.XtraEditors.ComboBoxEdit();
-            this.dateBaskiYili = new DevExpress.XtraEditors.DateEdit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).BeginInit();
             this.xtraTabControl1.SuspendLayout();
             this.xtraTabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dateBaskiYili.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateBaskiYili.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtKitapDili.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmBoxTur.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtYayinEvi.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtKitapAd.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtYazar.Properties)).BeginInit();
@@ -99,9 +102,6 @@ namespace kutuphaneOtomasyonu.Formlar
             this.xtraTabPage6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridSosyoloji)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cmBoxTur.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateBaskiYili.Properties.CalendarTimeProperties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateBaskiYili.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // xtraTabControl1
@@ -153,6 +153,18 @@ namespace kutuphaneOtomasyonu.Formlar
             this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "groupControl1";
             // 
+            // dateBaskiYili
+            // 
+            this.dateBaskiYili.EditValue = null;
+            this.dateBaskiYili.Location = new System.Drawing.Point(156, 270);
+            this.dateBaskiYili.Name = "dateBaskiYili";
+            this.dateBaskiYili.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dateBaskiYili.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dateBaskiYili.Size = new System.Drawing.Size(100, 20);
+            this.dateBaskiYili.TabIndex = 29;
+            // 
             // pctBox
             // 
             this.pctBox.Location = new System.Drawing.Point(156, 19);
@@ -178,6 +190,15 @@ namespace kutuphaneOtomasyonu.Formlar
             this.LblKitapDili.Size = new System.Drawing.Size(49, 14);
             this.LblKitapDili.TabIndex = 26;
             this.LblKitapDili.Text = "Kitap Dili:";
+            // 
+            // cmBoxTur
+            // 
+            this.cmBoxTur.Location = new System.Drawing.Point(156, 244);
+            this.cmBoxTur.Name = "cmBoxTur";
+            this.cmBoxTur.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cmBoxTur.Size = new System.Drawing.Size(100, 20);
+            this.cmBoxTur.TabIndex = 24;
             // 
             // txtYayinEvi
             // 
@@ -477,27 +498,6 @@ namespace kutuphaneOtomasyonu.Formlar
             this.gridView5.VertScrollVisibility = DevExpress.XtraGrid.Views.Base.ScrollVisibility.Always;
             this.gridView5.FocusedRowObjectChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowObjectChangedEventHandler(this.gridView5_FocusedRowObjectChanged);
             // 
-            // cmBoxTur
-            // 
-            this.cmBoxTur.Location = new System.Drawing.Point(156, 244);
-            this.cmBoxTur.Name = "cmBoxTur";
-            this.cmBoxTur.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cmBoxTur.Size = new System.Drawing.Size(100, 20);
-            this.cmBoxTur.TabIndex = 24;
-            // 
-            // dateBaskiYili
-            // 
-            this.dateBaskiYili.EditValue = null;
-            this.dateBaskiYili.Location = new System.Drawing.Point(156, 270);
-            this.dateBaskiYili.Name = "dateBaskiYili";
-            this.dateBaskiYili.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dateBaskiYili.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dateBaskiYili.Size = new System.Drawing.Size(100, 20);
-            this.dateBaskiYili.TabIndex = 29;
-            // 
             // FrmKitaplar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -514,8 +514,11 @@ namespace kutuphaneOtomasyonu.Formlar
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
             this.groupControl1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dateBaskiYili.Properties.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateBaskiYili.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtKitapDili.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmBoxTur.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtYayinEvi.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtKitapAd.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtYazar.Properties)).EndInit();
@@ -537,9 +540,6 @@ namespace kutuphaneOtomasyonu.Formlar
             this.xtraTabPage6.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridSosyoloji)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cmBoxTur.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateBaskiYili.Properties.CalendarTimeProperties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateBaskiYili.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }

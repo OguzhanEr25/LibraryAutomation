@@ -37,7 +37,7 @@ namespace kutuphaneOtomasyonu
             this.barButtonItem6 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem7 = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonControl1 = new DevExpress.XtraBars.Ribbon.RibbonControl();
-            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
+            this.FrmAnaSayfa = new DevExpress.XtraBars.BarButtonItem();
             this.BtnKitaplar = new DevExpress.XtraBars.BarButtonItem();
             this.BtnUyeler = new DevExpress.XtraBars.BarButtonItem();
             this.btnEmanetler = new DevExpress.XtraBars.BarButtonItem();
@@ -93,7 +93,7 @@ namespace kutuphaneOtomasyonu
             this.ribbonControl1.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
             this.ribbonControl1.ExpandCollapseItem,
             this.ribbonControl1.SearchEditItem,
-            this.barButtonItem1,
+            this.FrmAnaSayfa,
             this.BtnKitaplar,
             this.BtnUyeler,
             this.btnEmanetler,
@@ -111,13 +111,14 @@ namespace kutuphaneOtomasyonu
             this.ribbonControl1.Size = new System.Drawing.Size(1193, 150);
             this.ribbonControl1.Toolbar.ShowCustomizeItem = false;
             // 
-            // barButtonItem1
+            // FrmAnaSayfa
             // 
-            this.barButtonItem1.Caption = "Ana Sayfa";
-            this.barButtonItem1.Id = 1;
-            this.barButtonItem1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.Image")));
-            this.barButtonItem1.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.LargeImage")));
-            this.barButtonItem1.Name = "barButtonItem1";
+            this.FrmAnaSayfa.Caption = "Ana Sayfa";
+            this.FrmAnaSayfa.Id = 1;
+            this.FrmAnaSayfa.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.Image")));
+            this.FrmAnaSayfa.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.LargeImage")));
+            this.FrmAnaSayfa.Name = "FrmAnaSayfa";
+            this.FrmAnaSayfa.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.FrmAnaSayfa_ItemClick);
             // 
             // BtnKitaplar
             // 
@@ -157,7 +158,7 @@ namespace kutuphaneOtomasyonu
             // ribbonPageGroup1
             // 
             this.ribbonPageGroup1.AllowTextClipping = false;
-            this.ribbonPageGroup1.ItemLinks.Add(this.barButtonItem1);
+            this.ribbonPageGroup1.ItemLinks.Add(this.FrmAnaSayfa);
             this.ribbonPageGroup1.ItemLinks.Add(this.BtnKitaplar);
             this.ribbonPageGroup1.ItemLinks.Add(this.BtnUyeler);
             this.ribbonPageGroup1.ItemLinks.Add(this.btnEmanetler);
@@ -175,6 +176,7 @@ namespace kutuphaneOtomasyonu
             this.Controls.Add(this.ribbonControl1);
             this.IsMdiContainer = true;
             this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Kütüphane Otomasyonu";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).EndInit();
@@ -189,7 +191,7 @@ namespace kutuphaneOtomasyonu
         private DevExpress.XtraBars.Ribbon.RibbonControl ribbonControl1;
         private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage1;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup1;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem1;
+        private DevExpress.XtraBars.BarButtonItem FrmAnaSayfa;
         private DevExpress.XtraBars.BarButtonItem BtnKitaplar;
         private DevExpress.XtraBars.BarButtonItem BtnUyeler;
         private DevExpress.XtraBars.BarButtonItem btnEmanetler;

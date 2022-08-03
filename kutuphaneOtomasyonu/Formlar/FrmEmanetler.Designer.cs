@@ -35,6 +35,9 @@ namespace kutuphaneOtomasyonu.Formlar
             this.xtraTabControl1 = new DevExpress.XtraTab.XtraTabControl();
             this.xtraTabPage2 = new DevExpress.XtraTab.XtraTabPage();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
+            this.radioEmntVerilen = new System.Windows.Forms.RadioButton();
+            this.radioEmntAlinan = new System.Windows.Forms.RadioButton();
+            this.BtnSirala = new DevExpress.XtraEditors.SimpleButton();
             this.dtEmanetAlma = new DevExpress.XtraEditors.DateEdit();
             this.dtEmanetVerme = new DevExpress.XtraEditors.DateEdit();
             this.chDurum = new DevExpress.XtraEditors.CheckEdit();
@@ -53,9 +56,7 @@ namespace kutuphaneOtomasyonu.Formlar
             this.LblKitapTur = new DevExpress.XtraEditors.LabelControl();
             this.LblYazar = new DevExpress.XtraEditors.LabelControl();
             this.LblID = new DevExpress.XtraEditors.LabelControl();
-            this.BtnSirala = new DevExpress.XtraEditors.SimpleButton();
-            this.radioEmntAlinan = new System.Windows.Forms.RadioButton();
-            this.radioEmntVerilen = new System.Windows.Forms.RadioButton();
+            this.radioTumu = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.gridEmanetler)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).BeginInit();
@@ -111,6 +112,7 @@ namespace kutuphaneOtomasyonu.Formlar
             // 
             // groupControl1
             // 
+            this.groupControl1.Controls.Add(this.radioTumu);
             this.groupControl1.Controls.Add(this.radioEmntVerilen);
             this.groupControl1.Controls.Add(this.radioEmntAlinan);
             this.groupControl1.Controls.Add(this.BtnSirala);
@@ -138,6 +140,37 @@ namespace kutuphaneOtomasyonu.Formlar
             this.groupControl1.Size = new System.Drawing.Size(316, 501);
             this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "groupControl1";
+            // 
+            // radioEmntVerilen
+            // 
+            this.radioEmntVerilen.AutoSize = true;
+            this.radioEmntVerilen.Location = new System.Drawing.Point(39, 388);
+            this.radioEmntVerilen.Name = "radioEmntVerilen";
+            this.radioEmntVerilen.Size = new System.Drawing.Size(108, 17);
+            this.radioEmntVerilen.TabIndex = 34;
+            this.radioEmntVerilen.TabStop = true;
+            this.radioEmntVerilen.Text = "Emanet Verilenler";
+            this.radioEmntVerilen.UseVisualStyleBackColor = true;
+            // 
+            // radioEmntAlinan
+            // 
+            this.radioEmntAlinan.AutoSize = true;
+            this.radioEmntAlinan.Location = new System.Drawing.Point(39, 356);
+            this.radioEmntAlinan.Name = "radioEmntAlinan";
+            this.radioEmntAlinan.Size = new System.Drawing.Size(105, 17);
+            this.radioEmntAlinan.TabIndex = 33;
+            this.radioEmntAlinan.TabStop = true;
+            this.radioEmntAlinan.Text = "Emanet Alınanlar";
+            this.radioEmntAlinan.UseVisualStyleBackColor = true;
+            // 
+            // BtnSirala
+            // 
+            this.BtnSirala.Location = new System.Drawing.Point(54, 425);
+            this.BtnSirala.Name = "BtnSirala";
+            this.BtnSirala.Size = new System.Drawing.Size(75, 23);
+            this.BtnSirala.TabIndex = 32;
+            this.BtnSirala.Text = "Sırala";
+            this.BtnSirala.Click += new System.EventHandler(this.BtnSirala_Click);
             // 
             // dtEmanetAlma
             // 
@@ -311,37 +344,16 @@ namespace kutuphaneOtomasyonu.Formlar
             this.LblID.TabIndex = 0;
             this.LblID.Text = "Emanet Numarası :  ";
             // 
-            // BtnSirala
+            // radioTumu
             // 
-            this.BtnSirala.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
-            this.BtnSirala.Location = new System.Drawing.Point(49, 378);
-            this.BtnSirala.Name = "BtnSirala";
-            this.BtnSirala.Size = new System.Drawing.Size(75, 23);
-            this.BtnSirala.TabIndex = 32;
-            this.BtnSirala.Text = "Sırala";
-            this.BtnSirala.Click += new System.EventHandler(this.BtnSirala_Click);
-            // 
-            // radioEmntAlinan
-            // 
-            this.radioEmntAlinan.AutoSize = true;
-            this.radioEmntAlinan.Location = new System.Drawing.Point(34, 309);
-            this.radioEmntAlinan.Name = "radioEmntAlinan";
-            this.radioEmntAlinan.Size = new System.Drawing.Size(105, 17);
-            this.radioEmntAlinan.TabIndex = 33;
-            this.radioEmntAlinan.TabStop = true;
-            this.radioEmntAlinan.Text = "Emanet Alınanlar";
-            this.radioEmntAlinan.UseVisualStyleBackColor = true;
-            // 
-            // radioEmntVerilen
-            // 
-            this.radioEmntVerilen.AutoSize = true;
-            this.radioEmntVerilen.Location = new System.Drawing.Point(34, 341);
-            this.radioEmntVerilen.Name = "radioEmntVerilen";
-            this.radioEmntVerilen.Size = new System.Drawing.Size(108, 17);
-            this.radioEmntVerilen.TabIndex = 34;
-            this.radioEmntVerilen.TabStop = true;
-            this.radioEmntVerilen.Text = "Emanet Verilenler";
-            this.radioEmntVerilen.UseVisualStyleBackColor = true;
+            this.radioTumu.AutoSize = true;
+            this.radioTumu.Location = new System.Drawing.Point(39, 324);
+            this.radioTumu.Name = "radioTumu";
+            this.radioTumu.Size = new System.Drawing.Size(51, 17);
+            this.radioTumu.TabIndex = 35;
+            this.radioTumu.TabStop = true;
+            this.radioTumu.Text = "Tümü";
+            this.radioTumu.UseVisualStyleBackColor = true;
             // 
             // FrmEmanetler
             // 
@@ -402,5 +414,6 @@ namespace kutuphaneOtomasyonu.Formlar
         private System.Windows.Forms.RadioButton radioEmntVerilen;
         private System.Windows.Forms.RadioButton radioEmntAlinan;
         private DevExpress.XtraEditors.SimpleButton BtnSirala;
+        private System.Windows.Forms.RadioButton radioTumu;
     }
 }

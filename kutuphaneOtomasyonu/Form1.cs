@@ -35,6 +35,7 @@ namespace kutuphaneOtomasyonu
         {
 
         }
+
         FrmUyeler frm2;
         private void BtnUyeler_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
@@ -68,6 +69,17 @@ namespace kutuphaneOtomasyonu
                 frm4 = new FrmAdmin();
                 frm4.MdiParent = this;
                 frm4.Show();
+            }
+        }
+
+        FrmAnaSayfa frm5;
+        private void FrmAnaSayfa_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            if(frm5 == null || frm5.IsDisposed)
+            {
+                frm5 = new FrmAnaSayfa();
+                frm5.MdiParent = this;
+                frm5.Show();
             }
         }
     }
