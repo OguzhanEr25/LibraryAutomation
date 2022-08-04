@@ -27,27 +27,27 @@ namespace kutuphaneOtomasyonu.Formlar
             DataTable dt = new DataTable();
             SqlDataAdapter da = new SqlDataAdapter("select * from TblKitaplar Where kitapTuru ='Comedy|Drama'", bgl.Baglanti());
             da.Fill(dt);
-            gridBilimKurgu.DataSource = dt;
+            gridComedy.DataSource = dt;
 
             DataTable dt2 = new DataTable();
             SqlDataAdapter da2 = new SqlDataAdapter("select * from TblKitaplar Where kitapTuru ='Documentary'", bgl.Baglanti());
             da2.Fill(dt2);
-            gridFantastik.DataSource = dt2;
+            gridDoc.DataSource = dt2;
 
             DataTable dt3 = new DataTable();
             SqlDataAdapter da3 = new SqlDataAdapter("select * from TblKitaplar Where kitapTuru ='Crime|Drama'", bgl.Baglanti());
             da3.Fill(dt3);
-            gridTarihi.DataSource = dt3;
+            gridCrime.DataSource = dt3;
 
             DataTable dt4 = new DataTable();
             SqlDataAdapter da4 = new SqlDataAdapter("select * from TblKitaplar Where kitapTuru ='Horror'", bgl.Baglanti());
             da4.Fill(dt4);
-            gridCocuk.DataSource = dt4;
+            gridHorror.DataSource = dt4;
 
             DataTable dt5 = new DataTable();
             SqlDataAdapter da5 = new SqlDataAdapter("select * from TblKitaplar Where kitapTuru ='Drama'", bgl.Baglanti());
             da5.Fill(dt5);
-            gridSosyoloji.DataSource = dt5;
+            gridDrama.DataSource = dt5;
 
             DataTable dt6 = new DataTable();
             SqlDataAdapter da6 = new SqlDataAdapter("Select * From TblKitaplar", bgl.Baglanti());
@@ -293,5 +293,6 @@ namespace kutuphaneOtomasyonu.Formlar
                            select item;
             gridTumu.DataSource = degerler.ToList();
         }
+
     }
 }

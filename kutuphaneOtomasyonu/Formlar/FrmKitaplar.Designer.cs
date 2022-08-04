@@ -59,19 +59,19 @@ namespace kutuphaneOtomasyonu.Formlar
             this.LblID = new DevExpress.XtraEditors.LabelControl();
             this.xtraTabControl2 = new DevExpress.XtraTab.XtraTabControl();
             this.xtraTabPage1 = new DevExpress.XtraTab.XtraTabPage();
-            this.gridBilimKurgu = new DevExpress.XtraGrid.GridControl();
+            this.gridComedy = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.xtraTabPage3 = new DevExpress.XtraTab.XtraTabPage();
-            this.gridFantastik = new DevExpress.XtraGrid.GridControl();
+            this.gridDoc = new DevExpress.XtraGrid.GridControl();
             this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.xtraTabPage4 = new DevExpress.XtraTab.XtraTabPage();
-            this.gridTarihi = new DevExpress.XtraGrid.GridControl();
+            this.gridCrime = new DevExpress.XtraGrid.GridControl();
             this.gridView3 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.xtraTabPage5 = new DevExpress.XtraTab.XtraTabPage();
-            this.gridCocuk = new DevExpress.XtraGrid.GridControl();
+            this.gridHorror = new DevExpress.XtraGrid.GridControl();
             this.gridView4 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.xtraTabPage6 = new DevExpress.XtraTab.XtraTabPage();
-            this.gridSosyoloji = new DevExpress.XtraGrid.GridControl();
+            this.gridDrama = new DevExpress.XtraGrid.GridControl();
             this.gridView5 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.xtraTabPage7 = new DevExpress.XtraTab.XtraTabPage();
             this.gridTumu = new DevExpress.XtraGrid.GridControl();
@@ -94,19 +94,19 @@ namespace kutuphaneOtomasyonu.Formlar
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl2)).BeginInit();
             this.xtraTabControl2.SuspendLayout();
             this.xtraTabPage1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridBilimKurgu)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridComedy)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             this.xtraTabPage3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridFantastik)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridDoc)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
             this.xtraTabPage4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridTarihi)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridCrime)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView3)).BeginInit();
             this.xtraTabPage5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridCocuk)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridHorror)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView4)).BeginInit();
             this.xtraTabPage6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridSosyoloji)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridDrama)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView5)).BeginInit();
             this.xtraTabPage7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridTumu)).BeginInit();
@@ -115,10 +115,11 @@ namespace kutuphaneOtomasyonu.Formlar
             // 
             // xtraTabControl1
             // 
+            this.xtraTabControl1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.xtraTabControl1.Location = new System.Drawing.Point(944, 0);
             this.xtraTabControl1.Name = "xtraTabControl1";
             this.xtraTabControl1.SelectedTabPage = this.xtraTabPage2;
-            this.xtraTabControl1.Size = new System.Drawing.Size(394, 632);
+            this.xtraTabControl1.Size = new System.Drawing.Size(394, 616);
             this.xtraTabControl1.TabIndex = 3;
             this.xtraTabControl1.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.xtraTabPage2});
@@ -128,7 +129,7 @@ namespace kutuphaneOtomasyonu.Formlar
             this.xtraTabPage2.Controls.Add(this.groupControl1);
             this.xtraTabPage2.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("xtraTabPage2.ImageOptions.Image")));
             this.xtraTabPage2.Name = "xtraTabPage2";
-            this.xtraTabPage2.Size = new System.Drawing.Size(392, 606);
+            this.xtraTabPage2.Size = new System.Drawing.Size(392, 584);
             this.xtraTabPage2.Text = "Kitap Bilgiler";
             // 
             // groupControl1
@@ -160,7 +161,7 @@ namespace kutuphaneOtomasyonu.Formlar
             this.groupControl1.Location = new System.Drawing.Point(0, 3);
             this.groupControl1.Name = "groupControl1";
             this.groupControl1.ShowCaption = false;
-            this.groupControl1.Size = new System.Drawing.Size(393, 604);
+            this.groupControl1.Size = new System.Drawing.Size(393, 582);
             this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "groupControl1";
             // 
@@ -259,7 +260,7 @@ namespace kutuphaneOtomasyonu.Formlar
             // BtnTemizle
             // 
             this.BtnTemizle.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("BtnTemizle.ImageOptions.Image")));
-            this.BtnTemizle.Location = new System.Drawing.Point(254, 557);
+            this.BtnTemizle.Location = new System.Drawing.Point(253, 536);
             this.BtnTemizle.Name = "BtnTemizle";
             this.BtnTemizle.Size = new System.Drawing.Size(75, 23);
             this.BtnTemizle.TabIndex = 20;
@@ -269,7 +270,7 @@ namespace kutuphaneOtomasyonu.Formlar
             // BtnResimSec
             // 
             this.BtnResimSec.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("BtnResimSec.ImageOptions.Image")));
-            this.BtnResimSec.Location = new System.Drawing.Point(161, 507);
+            this.BtnResimSec.Location = new System.Drawing.Point(160, 486);
             this.BtnResimSec.Name = "BtnResimSec";
             this.BtnResimSec.Size = new System.Drawing.Size(75, 23);
             this.BtnResimSec.TabIndex = 18;
@@ -279,7 +280,7 @@ namespace kutuphaneOtomasyonu.Formlar
             // BtnGüncelle
             // 
             this.BtnGüncelle.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("BtnGüncelle.ImageOptions.Image")));
-            this.BtnGüncelle.Location = new System.Drawing.Point(161, 557);
+            this.BtnGüncelle.Location = new System.Drawing.Point(160, 536);
             this.BtnGüncelle.Name = "BtnGüncelle";
             this.BtnGüncelle.Size = new System.Drawing.Size(75, 23);
             this.BtnGüncelle.TabIndex = 16;
@@ -289,7 +290,7 @@ namespace kutuphaneOtomasyonu.Formlar
             // BtnSil
             // 
             this.BtnSil.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("BtnSil.ImageOptions.Image")));
-            this.BtnSil.Location = new System.Drawing.Point(66, 557);
+            this.BtnSil.Location = new System.Drawing.Point(65, 536);
             this.BtnSil.Name = "BtnSil";
             this.BtnSil.Size = new System.Drawing.Size(75, 23);
             this.BtnSil.TabIndex = 15;
@@ -299,7 +300,7 @@ namespace kutuphaneOtomasyonu.Formlar
             // BtnEkle
             // 
             this.BtnEkle.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("BtnEkle.ImageOptions.Image")));
-            this.BtnEkle.Location = new System.Drawing.Point(66, 507);
+            this.BtnEkle.Location = new System.Drawing.Point(65, 486);
             this.BtnEkle.Name = "BtnEkle";
             this.BtnEkle.Size = new System.Drawing.Size(75, 23);
             this.BtnEkle.TabIndex = 14;
@@ -389,10 +390,11 @@ namespace kutuphaneOtomasyonu.Formlar
             // 
             // xtraTabControl2
             // 
+            this.xtraTabControl2.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.xtraTabControl2.Location = new System.Drawing.Point(0, 0);
             this.xtraTabControl2.Name = "xtraTabControl2";
             this.xtraTabControl2.SelectedTabPage = this.xtraTabPage1;
-            this.xtraTabControl2.Size = new System.Drawing.Size(946, 632);
+            this.xtraTabControl2.Size = new System.Drawing.Size(946, 616);
             this.xtraTabControl2.TabIndex = 1;
             this.xtraTabControl2.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.xtraTabPage1,
@@ -404,125 +406,125 @@ namespace kutuphaneOtomasyonu.Formlar
             // 
             // xtraTabPage1
             // 
-            this.xtraTabPage1.Controls.Add(this.gridBilimKurgu);
+            this.xtraTabPage1.Controls.Add(this.gridComedy);
             this.xtraTabPage1.Name = "xtraTabPage1";
-            this.xtraTabPage1.Size = new System.Drawing.Size(944, 609);
+            this.xtraTabPage1.Size = new System.Drawing.Size(944, 587);
             this.xtraTabPage1.Text = "Comedy | Dram";
             // 
-            // gridBilimKurgu
+            // gridComedy
             // 
-            this.gridBilimKurgu.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridBilimKurgu.Location = new System.Drawing.Point(0, 0);
-            this.gridBilimKurgu.MainView = this.gridView1;
-            this.gridBilimKurgu.Name = "gridBilimKurgu";
-            this.gridBilimKurgu.Size = new System.Drawing.Size(944, 609);
-            this.gridBilimKurgu.TabIndex = 0;
-            this.gridBilimKurgu.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridComedy.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gridComedy.Location = new System.Drawing.Point(0, 0);
+            this.gridComedy.MainView = this.gridView1;
+            this.gridComedy.Name = "gridComedy";
+            this.gridComedy.Size = new System.Drawing.Size(944, 587);
+            this.gridComedy.TabIndex = 0;
+            this.gridComedy.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
             // 
             // gridView1
             // 
-            this.gridView1.GridControl = this.gridBilimKurgu;
+            this.gridView1.GridControl = this.gridComedy;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsView.ShowGroupPanel = false;
             this.gridView1.FocusedRowObjectChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowObjectChangedEventHandler(this.gridView1_FocusedRowObjectChanged);
             // 
             // xtraTabPage3
             // 
-            this.xtraTabPage3.Controls.Add(this.gridFantastik);
+            this.xtraTabPage3.Controls.Add(this.gridDoc);
             this.xtraTabPage3.Name = "xtraTabPage3";
-            this.xtraTabPage3.Size = new System.Drawing.Size(944, 609);
+            this.xtraTabPage3.Size = new System.Drawing.Size(944, 587);
             this.xtraTabPage3.Text = "Documentary";
             // 
-            // gridFantastik
+            // gridDoc
             // 
-            this.gridFantastik.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridFantastik.Location = new System.Drawing.Point(0, 0);
-            this.gridFantastik.MainView = this.gridView2;
-            this.gridFantastik.Name = "gridFantastik";
-            this.gridFantastik.Size = new System.Drawing.Size(944, 609);
-            this.gridFantastik.TabIndex = 0;
-            this.gridFantastik.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridDoc.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gridDoc.Location = new System.Drawing.Point(0, 0);
+            this.gridDoc.MainView = this.gridView2;
+            this.gridDoc.Name = "gridDoc";
+            this.gridDoc.Size = new System.Drawing.Size(944, 587);
+            this.gridDoc.TabIndex = 0;
+            this.gridDoc.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView2});
             // 
             // gridView2
             // 
-            this.gridView2.GridControl = this.gridFantastik;
+            this.gridView2.GridControl = this.gridDoc;
             this.gridView2.Name = "gridView2";
             this.gridView2.OptionsView.ShowGroupPanel = false;
             this.gridView2.FocusedRowObjectChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowObjectChangedEventHandler(this.gridView2_FocusedRowObjectChanged);
             // 
             // xtraTabPage4
             // 
-            this.xtraTabPage4.Controls.Add(this.gridTarihi);
+            this.xtraTabPage4.Controls.Add(this.gridCrime);
             this.xtraTabPage4.Name = "xtraTabPage4";
-            this.xtraTabPage4.Size = new System.Drawing.Size(944, 609);
+            this.xtraTabPage4.Size = new System.Drawing.Size(944, 587);
             this.xtraTabPage4.Text = "Crime | Drama";
             // 
-            // gridTarihi
+            // gridCrime
             // 
-            this.gridTarihi.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridTarihi.Location = new System.Drawing.Point(0, 0);
-            this.gridTarihi.MainView = this.gridView3;
-            this.gridTarihi.Name = "gridTarihi";
-            this.gridTarihi.Size = new System.Drawing.Size(944, 609);
-            this.gridTarihi.TabIndex = 0;
-            this.gridTarihi.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridCrime.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gridCrime.Location = new System.Drawing.Point(0, 0);
+            this.gridCrime.MainView = this.gridView3;
+            this.gridCrime.Name = "gridCrime";
+            this.gridCrime.Size = new System.Drawing.Size(944, 587);
+            this.gridCrime.TabIndex = 0;
+            this.gridCrime.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView3});
             // 
             // gridView3
             // 
-            this.gridView3.GridControl = this.gridTarihi;
+            this.gridView3.GridControl = this.gridCrime;
             this.gridView3.Name = "gridView3";
             this.gridView3.OptionsView.ShowGroupPanel = false;
             this.gridView3.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.gridView3_FocusedRowChanged);
             // 
             // xtraTabPage5
             // 
-            this.xtraTabPage5.Controls.Add(this.gridCocuk);
+            this.xtraTabPage5.Controls.Add(this.gridHorror);
             this.xtraTabPage5.Name = "xtraTabPage5";
-            this.xtraTabPage5.Size = new System.Drawing.Size(944, 609);
+            this.xtraTabPage5.Size = new System.Drawing.Size(944, 587);
             this.xtraTabPage5.Text = "Horror";
             // 
-            // gridCocuk
+            // gridHorror
             // 
-            this.gridCocuk.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridCocuk.Location = new System.Drawing.Point(0, 0);
-            this.gridCocuk.MainView = this.gridView4;
-            this.gridCocuk.Name = "gridCocuk";
-            this.gridCocuk.Size = new System.Drawing.Size(944, 609);
-            this.gridCocuk.TabIndex = 0;
-            this.gridCocuk.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridHorror.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gridHorror.Location = new System.Drawing.Point(0, 0);
+            this.gridHorror.MainView = this.gridView4;
+            this.gridHorror.Name = "gridHorror";
+            this.gridHorror.Size = new System.Drawing.Size(944, 587);
+            this.gridHorror.TabIndex = 0;
+            this.gridHorror.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView4});
             // 
             // gridView4
             // 
-            this.gridView4.GridControl = this.gridCocuk;
+            this.gridView4.GridControl = this.gridHorror;
             this.gridView4.Name = "gridView4";
             this.gridView4.OptionsView.ShowGroupPanel = false;
             this.gridView4.FocusedRowObjectChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowObjectChangedEventHandler(this.gridView4_FocusedRowObjectChanged);
             // 
             // xtraTabPage6
             // 
-            this.xtraTabPage6.Controls.Add(this.gridSosyoloji);
+            this.xtraTabPage6.Controls.Add(this.gridDrama);
             this.xtraTabPage6.Name = "xtraTabPage6";
-            this.xtraTabPage6.Size = new System.Drawing.Size(944, 609);
+            this.xtraTabPage6.Size = new System.Drawing.Size(944, 587);
             this.xtraTabPage6.Text = "Drama";
             // 
-            // gridSosyoloji
+            // gridDrama
             // 
-            this.gridSosyoloji.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridSosyoloji.Location = new System.Drawing.Point(0, 0);
-            this.gridSosyoloji.MainView = this.gridView5;
-            this.gridSosyoloji.Name = "gridSosyoloji";
-            this.gridSosyoloji.Size = new System.Drawing.Size(944, 609);
-            this.gridSosyoloji.TabIndex = 0;
-            this.gridSosyoloji.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridDrama.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gridDrama.Location = new System.Drawing.Point(0, 0);
+            this.gridDrama.MainView = this.gridView5;
+            this.gridDrama.Name = "gridDrama";
+            this.gridDrama.Size = new System.Drawing.Size(944, 587);
+            this.gridDrama.TabIndex = 0;
+            this.gridDrama.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView5});
             // 
             // gridView5
             // 
-            this.gridView5.GridControl = this.gridSosyoloji;
+            this.gridView5.GridControl = this.gridDrama;
             this.gridView5.Name = "gridView5";
             this.gridView5.OptionsView.ShowGroupPanel = false;
             this.gridView5.VertScrollVisibility = DevExpress.XtraGrid.Views.Base.ScrollVisibility.Always;
@@ -532,7 +534,7 @@ namespace kutuphaneOtomasyonu.Formlar
             // 
             this.xtraTabPage7.Controls.Add(this.gridTumu);
             this.xtraTabPage7.Name = "xtraTabPage7";
-            this.xtraTabPage7.Size = new System.Drawing.Size(944, 609);
+            this.xtraTabPage7.Size = new System.Drawing.Size(944, 587);
             this.xtraTabPage7.Text = "Tümü";
             // 
             // gridTumu
@@ -541,7 +543,7 @@ namespace kutuphaneOtomasyonu.Formlar
             this.gridTumu.Location = new System.Drawing.Point(0, 0);
             this.gridTumu.MainView = this.gridView6;
             this.gridTumu.Name = "gridTumu";
-            this.gridTumu.Size = new System.Drawing.Size(944, 609);
+            this.gridTumu.Size = new System.Drawing.Size(944, 587);
             this.gridTumu.TabIndex = 0;
             this.gridTumu.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView6});
@@ -557,7 +559,7 @@ namespace kutuphaneOtomasyonu.Formlar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1338, 633);
+            this.ClientSize = new System.Drawing.Size(1338, 618);
             this.Controls.Add(this.xtraTabControl2);
             this.Controls.Add(this.xtraTabControl1);
             this.Name = "FrmKitaplar";
@@ -582,19 +584,19 @@ namespace kutuphaneOtomasyonu.Formlar
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl2)).EndInit();
             this.xtraTabControl2.ResumeLayout(false);
             this.xtraTabPage1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.gridBilimKurgu)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridComedy)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             this.xtraTabPage3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.gridFantastik)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridDoc)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
             this.xtraTabPage4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.gridTarihi)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridCrime)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView3)).EndInit();
             this.xtraTabPage5.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.gridCocuk)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridHorror)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView4)).EndInit();
             this.xtraTabPage6.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.gridSosyoloji)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridDrama)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView5)).EndInit();
             this.xtraTabPage7.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridTumu)).EndInit();
@@ -622,19 +624,19 @@ namespace kutuphaneOtomasyonu.Formlar
         private DevExpress.XtraEditors.LabelControl LblID;
         private DevExpress.XtraTab.XtraTabControl xtraTabControl2;
         private DevExpress.XtraTab.XtraTabPage xtraTabPage1;
-        private DevExpress.XtraGrid.GridControl gridBilimKurgu;
+        private DevExpress.XtraGrid.GridControl gridComedy;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private DevExpress.XtraTab.XtraTabPage xtraTabPage3;
-        private DevExpress.XtraGrid.GridControl gridFantastik;
+        private DevExpress.XtraGrid.GridControl gridDoc;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView2;
         private DevExpress.XtraTab.XtraTabPage xtraTabPage4;
-        private DevExpress.XtraGrid.GridControl gridTarihi;
+        private DevExpress.XtraGrid.GridControl gridCrime;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView3;
         private DevExpress.XtraTab.XtraTabPage xtraTabPage5;
-        private DevExpress.XtraGrid.GridControl gridCocuk;
+        private DevExpress.XtraGrid.GridControl gridHorror;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView4;
         private DevExpress.XtraTab.XtraTabPage xtraTabPage6;
-        private DevExpress.XtraGrid.GridControl gridSosyoloji;
+        private DevExpress.XtraGrid.GridControl gridDrama;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView5;
         private DevExpress.XtraEditors.TextEdit txtKitapDili;
         private DevExpress.XtraEditors.LabelControl LblKitapDili;

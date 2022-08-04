@@ -108,7 +108,7 @@ namespace kutuphaneOtomasyonu
             this.ribbonPage1});
             this.ribbonControl1.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.Office2019;
             this.ribbonControl1.ShowToolbarCustomizeItem = false;
-            this.ribbonControl1.Size = new System.Drawing.Size(1343, 148);
+            this.ribbonControl1.Size = new System.Drawing.Size(1343, 158);
             this.ribbonControl1.Toolbar.ShowCustomizeItem = false;
             // 
             // FrmAnaSayfa
@@ -172,8 +172,9 @@ namespace kutuphaneOtomasyonu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1343, 801);
+            this.ClientSize = new System.Drawing.Size(1343, 803);
             this.Controls.Add(this.ribbonControl1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.IsMdiContainer = true;
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

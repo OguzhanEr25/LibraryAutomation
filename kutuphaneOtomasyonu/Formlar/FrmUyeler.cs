@@ -124,10 +124,10 @@ namespace kutuphaneOtomasyonu.Formlar
 
         private void txtUyeAra_EditValueChanged(object sender, EventArgs e) 
         {
-            // Aranan üye ismini listede gösterme
+            // Aranan üye adını veya soyadını listede gösterme
             string uyeAra = txtUyeAra.Text;
             var deger = from item in db.TblUyeler
-                        where item.Ad.Contains(uyeAra)
+                        where (item.Ad.Contains(uyeAra) | item.Soyad.Contains(uyeAra))
                         select item;
             gridControlUye.DataSource = deger.ToList();
         }

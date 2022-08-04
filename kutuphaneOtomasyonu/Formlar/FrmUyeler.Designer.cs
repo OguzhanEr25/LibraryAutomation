@@ -35,6 +35,8 @@ namespace kutuphaneOtomasyonu.Formlar
             this.xtraTabControl1 = new DevExpress.XtraTab.XtraTabControl();
             this.xtraTabPage2 = new DevExpress.XtraTab.XtraTabPage();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
+            this.txtUyeAra = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.LblAdres = new DevExpress.XtraEditors.LabelControl();
             this.BtnTemizle = new DevExpress.XtraEditors.SimpleButton();
             this.pctBox = new System.Windows.Forms.PictureBox();
@@ -53,8 +55,6 @@ namespace kutuphaneOtomasyonu.Formlar
             this.LblBaskiYili = new DevExpress.XtraEditors.LabelControl();
             this.LblYazar = new DevExpress.XtraEditors.LabelControl();
             this.LblID = new DevExpress.XtraEditors.LabelControl();
-            this.txtUyeAra = new DevExpress.XtraEditors.TextEdit();
-            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlUye)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).BeginInit();
@@ -62,13 +62,13 @@ namespace kutuphaneOtomasyonu.Formlar
             this.xtraTabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtUyeAra.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtAd.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSoyad.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTelefon.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMail.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtID.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtUyeAra.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // gridControlUye
@@ -76,7 +76,7 @@ namespace kutuphaneOtomasyonu.Formlar
             this.gridControlUye.Location = new System.Drawing.Point(1, 1);
             this.gridControlUye.MainView = this.gridView1;
             this.gridControlUye.Name = "gridControlUye";
-            this.gridControlUye.Size = new System.Drawing.Size(987, 629);
+            this.gridControlUye.Size = new System.Drawing.Size(987, 617);
             this.gridControlUye.TabIndex = 1;
             this.gridControlUye.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -95,7 +95,7 @@ namespace kutuphaneOtomasyonu.Formlar
             this.xtraTabControl1.Location = new System.Drawing.Point(988, 1);
             this.xtraTabControl1.Name = "xtraTabControl1";
             this.xtraTabControl1.SelectedTabPage = this.xtraTabPage2;
-            this.xtraTabControl1.Size = new System.Drawing.Size(349, 630);
+            this.xtraTabControl1.Size = new System.Drawing.Size(349, 617);
             this.xtraTabControl1.TabIndex = 2;
             this.xtraTabControl1.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.xtraTabPage2});
@@ -105,7 +105,7 @@ namespace kutuphaneOtomasyonu.Formlar
             this.xtraTabPage2.Controls.Add(this.groupControl1);
             this.xtraTabPage2.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("xtraTabPage2.ImageOptions.Image")));
             this.xtraTabPage2.Name = "xtraTabPage2";
-            this.xtraTabPage2.Size = new System.Drawing.Size(347, 604);
+            this.xtraTabPage2.Size = new System.Drawing.Size(347, 585);
             this.xtraTabPage2.Text = "Üye Bilgiler";
             // 
             // groupControl1
@@ -133,9 +133,27 @@ namespace kutuphaneOtomasyonu.Formlar
             this.groupControl1.Location = new System.Drawing.Point(-1, 3);
             this.groupControl1.Name = "groupControl1";
             this.groupControl1.ShowCaption = false;
-            this.groupControl1.Size = new System.Drawing.Size(348, 601);
+            this.groupControl1.Size = new System.Drawing.Size(348, 582);
             this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "groupControl1";
+            // 
+            // txtUyeAra
+            // 
+            this.txtUyeAra.Location = new System.Drawing.Point(156, 419);
+            this.txtUyeAra.Name = "txtUyeAra";
+            this.txtUyeAra.Size = new System.Drawing.Size(100, 20);
+            this.txtUyeAra.TabIndex = 23;
+            this.txtUyeAra.EditValueChanged += new System.EventHandler(this.txtUyeAra_EditValueChanged);
+            // 
+            // labelControl1
+            // 
+            this.labelControl1.Appearance.Font = new System.Drawing.Font("Tahoma", 9F);
+            this.labelControl1.Appearance.Options.UseFont = true;
+            this.labelControl1.Location = new System.Drawing.Point(38, 421);
+            this.labelControl1.Name = "labelControl1";
+            this.labelControl1.Size = new System.Drawing.Size(51, 14);
+            this.labelControl1.TabIndex = 22;
+            this.labelControl1.Text = "Üye Ara :";
             // 
             // LblAdres
             // 
@@ -150,7 +168,7 @@ namespace kutuphaneOtomasyonu.Formlar
             // BtnTemizle
             // 
             this.BtnTemizle.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("BtnTemizle.ImageOptions.Image")));
-            this.BtnTemizle.Location = new System.Drawing.Point(199, 526);
+            this.BtnTemizle.Location = new System.Drawing.Point(199, 492);
             this.BtnTemizle.Name = "BtnTemizle";
             this.BtnTemizle.Size = new System.Drawing.Size(75, 23);
             this.BtnTemizle.TabIndex = 20;
@@ -169,7 +187,7 @@ namespace kutuphaneOtomasyonu.Formlar
             // BtnResimSec
             // 
             this.BtnResimSec.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("BtnResimSec.ImageOptions.Image")));
-            this.BtnResimSec.Location = new System.Drawing.Point(199, 479);
+            this.BtnResimSec.Location = new System.Drawing.Point(199, 445);
             this.BtnResimSec.Name = "BtnResimSec";
             this.BtnResimSec.Size = new System.Drawing.Size(75, 23);
             this.BtnResimSec.TabIndex = 18;
@@ -179,7 +197,7 @@ namespace kutuphaneOtomasyonu.Formlar
             // BtnGüncelle
             // 
             this.BtnGüncelle.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("BtnGüncelle.ImageOptions.Image")));
-            this.BtnGüncelle.Location = new System.Drawing.Point(70, 568);
+            this.BtnGüncelle.Location = new System.Drawing.Point(134, 537);
             this.BtnGüncelle.Name = "BtnGüncelle";
             this.BtnGüncelle.Size = new System.Drawing.Size(75, 23);
             this.BtnGüncelle.TabIndex = 16;
@@ -189,7 +207,7 @@ namespace kutuphaneOtomasyonu.Formlar
             // BtnSil
             // 
             this.BtnSil.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("BtnSil.ImageOptions.Image")));
-            this.BtnSil.Location = new System.Drawing.Point(70, 526);
+            this.BtnSil.Location = new System.Drawing.Point(70, 492);
             this.BtnSil.Name = "BtnSil";
             this.BtnSil.Size = new System.Drawing.Size(75, 23);
             this.BtnSil.TabIndex = 15;
@@ -199,7 +217,7 @@ namespace kutuphaneOtomasyonu.Formlar
             // BtnEkle
             // 
             this.BtnEkle.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("BtnEkle.ImageOptions.Image")));
-            this.BtnEkle.Location = new System.Drawing.Point(70, 479);
+            this.BtnEkle.Location = new System.Drawing.Point(70, 445);
             this.BtnEkle.Name = "BtnEkle";
             this.BtnEkle.Size = new System.Drawing.Size(75, 23);
             this.BtnEkle.TabIndex = 14;
@@ -301,29 +319,11 @@ namespace kutuphaneOtomasyonu.Formlar
             this.LblID.TabIndex = 0;
             this.LblID.Text = "ID:";
             // 
-            // txtUyeAra
-            // 
-            this.txtUyeAra.Location = new System.Drawing.Point(156, 419);
-            this.txtUyeAra.Name = "txtUyeAra";
-            this.txtUyeAra.Size = new System.Drawing.Size(100, 20);
-            this.txtUyeAra.TabIndex = 23;
-            this.txtUyeAra.EditValueChanged += new System.EventHandler(this.txtUyeAra_EditValueChanged);
-            // 
-            // labelControl1
-            // 
-            this.labelControl1.Appearance.Font = new System.Drawing.Font("Tahoma", 9F);
-            this.labelControl1.Appearance.Options.UseFont = true;
-            this.labelControl1.Location = new System.Drawing.Point(38, 421);
-            this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(51, 14);
-            this.labelControl1.TabIndex = 22;
-            this.labelControl1.Text = "Üye Ara :";
-            // 
             // FrmUyeler
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1338, 631);
+            this.ClientSize = new System.Drawing.Size(1338, 618);
             this.Controls.Add(this.xtraTabControl1);
             this.Controls.Add(this.gridControlUye);
             this.Name = "FrmUyeler";
@@ -337,13 +337,13 @@ namespace kutuphaneOtomasyonu.Formlar
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
             this.groupControl1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtUyeAra.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtAd.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSoyad.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTelefon.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMail.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtID.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtUyeAra.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }

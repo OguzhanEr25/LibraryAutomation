@@ -17,6 +17,7 @@ namespace kutuphaneOtomasyonu.Formlar
     {
         public FrmEmanetler()
         {
+            CheckForIllegalCrossThreadCalls = false;
             InitializeComponent();
         }
 
@@ -57,7 +58,7 @@ namespace kutuphaneOtomasyonu.Formlar
             txtKitapID.Text = "";
             dtEmanetVerme.Text = "";
             dtEmanetAlma.Text = "";
-            txtIslem.Text = "";
+            dtIslemTarihi.Text = "";
             chDurum.Text = "";
         }
 
@@ -75,7 +76,7 @@ namespace kutuphaneOtomasyonu.Formlar
             txtKitapID.Text = gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "kitapId").ToString();
             dtEmanetVerme.Text = gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "EmanetVermeTarihi").ToString();
             dtEmanetAlma.Text = gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "EmanetAlmaTarihi").ToString();
-            txtIslem.Text = gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "EmanetIslemTarihi").ToString();
+            dtIslemTarihi.Text = gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "EmanetIslemTarihi").ToString();
             chDurum.Checked = Convert.ToBoolean(gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "EmanetDurum").ToString());
         }
 
@@ -97,11 +98,21 @@ namespace kutuphaneOtomasyonu.Formlar
             TblEmanetler emanet = new TblEmanetler();
             emanet.uyeID = Convert.ToInt32(txtUyeID.Text);
             emanet.kitapId = Convert.ToInt32(txtKitapID.Text);
-            emanet.EmanetVermeTarihi = Convert.ToDateTime(dtEmanetVerme.Text);
-            emanet.EmanetAlmaTarihi = Convert.ToDateTime(dtEmanetAlma.Text);
-            emanet.EmanetIslemTarihi = Convert.ToDateTime(txtIslem.Text);
+            try
+            {
+                emanet.EmanetVermeTarihi = Convert.ToDateTime(dtEmanetVerme.Text);
+                emanet.EmanetAlmaTarihi = Convert.ToDateTime(dtEmanetAlma.Text);
+                
+            }
+            catch (Exception)
+            {
+                dtEmanetAlma.Text = "";
+                
+            }
+            emanet.EmanetIslemTarihi = Convert.ToDateTime(dtIslemTarihi.Text);
+
             // checkEdit durum kontrol
-            if(chDurum.Checked == true)
+            if (chDurum.Checked == true)
             {
                 chDurum.Visible = true;
             }
@@ -144,7 +155,7 @@ namespace kutuphaneOtomasyonu.Formlar
             item.EmanetVermeTarihi = Convert.ToDateTime(dtEmanetVerme.Text);
             // tarihi null alma araştır
             item.EmanetAlmaTarihi = Convert.ToDateTime(dtEmanetAlma.Text);
-            item.EmanetIslemTarihi = Convert.ToDateTime(txtIslem.Text);
+            item.EmanetIslemTarihi = Convert.ToDateTime(dtIslemTarihi.Text);
             // checkEdit durum kontrol
             if (chDurum.Checked == true)    
             {
@@ -198,23 +209,29 @@ namespace kutuphaneOtomasyonu.Formlar
 
         private void BtnSirala_Click(object sender, EventArgs e)
         {
+            
             // Sadece emanet alınmış kitapları listele
             if (radioEmntAlinan.Checked == true)
             {
+                
                 List<KitapEmanetler_Result> list = db.KitapEmanetler().Where(p => p.EmanetDurum == true).ToList();
                 gridEmanetler.DataSource = list;
             }
-            if(radioEmntVerilen.Checked == true)
+            if (radioEmntVerilen.Checked == true)
             {
                 // Sadece emanet verilen kitapları listele
+                
                 List<KitapEmanetler_Result> list2 = db.KitapEmanetler().Where(p => p.EmanetDurum == false).ToList();
                 gridEmanetler.DataSource = list2;
             }
-            if(radioTumu.Checked == true)
+            if (radioTumu.Checked == true)
             {
+                
                 List<KitapEmanetler_Result> list3 = db.KitapEmanetler().Select(x => x).ToList();
                 gridEmanetler.DataSource = list3;
             }
+            backgroundWorker1.RunWorkerAsync();
+
         }
 
         private void txtEmanetBul_EditValueChanged(object sender, EventArgs e)
@@ -225,6 +242,28 @@ namespace kutuphaneOtomasyonu.Formlar
                         where Convert.ToString(item.EmanetNo).Contains(arananEmnt)
                         select item;
             gridEmanetler.DataSource = deger.ToList();
+        }
+
+        long toplam = 0;
+        private void IsYap()
+        {
+            // Veri boyutu boyunca işlem süresi alıyor ve progress bar da gösteriyor
+            for (int i = 0; i <= db.KitapEmanetler().Count(); i++)
+            {
+                toplam += i;
+                
+                backgroundWorker1.ReportProgress(i);
+            }
+        }
+
+        private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
+        {
+            IsYap();
+        }
+
+        private void backgroundWorker1_ProgressChanged(object sender, ProgressChangedEventArgs e)
+        {
+            progressBarControl1.EditValue = e.ProgressPercentage;
         }
     }
 }
