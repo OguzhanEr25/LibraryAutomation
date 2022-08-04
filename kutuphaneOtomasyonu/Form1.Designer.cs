@@ -108,15 +108,15 @@ namespace kutuphaneOtomasyonu
             this.ribbonPage1});
             this.ribbonControl1.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.Office2019;
             this.ribbonControl1.ShowToolbarCustomizeItem = false;
-            this.ribbonControl1.Size = new System.Drawing.Size(1193, 150);
+            this.ribbonControl1.Size = new System.Drawing.Size(1343, 148);
             this.ribbonControl1.Toolbar.ShowCustomizeItem = false;
             // 
             // FrmAnaSayfa
             // 
             this.FrmAnaSayfa.Caption = "Ana Sayfa";
             this.FrmAnaSayfa.Id = 1;
-            this.FrmAnaSayfa.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.Image")));
-            this.FrmAnaSayfa.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.LargeImage")));
+            this.FrmAnaSayfa.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("FrmAnaSayfa.ImageOptions.Image")));
+            this.FrmAnaSayfa.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("FrmAnaSayfa.ImageOptions.LargeImage")));
             this.FrmAnaSayfa.Name = "FrmAnaSayfa";
             this.FrmAnaSayfa.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.FrmAnaSayfa_ItemClick);
             // 
@@ -172,7 +172,7 @@ namespace kutuphaneOtomasyonu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1193, 711);
+            this.ClientSize = new System.Drawing.Size(1343, 801);
             this.Controls.Add(this.ribbonControl1);
             this.IsMdiContainer = true;
             this.Name = "Form1";

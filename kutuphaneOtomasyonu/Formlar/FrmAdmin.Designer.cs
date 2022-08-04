@@ -86,7 +86,7 @@ namespace kutuphaneOtomasyonu.Formlar
             this.gridAdmin.Location = new System.Drawing.Point(2, 1);
             this.gridAdmin.MainView = this.gridView1;
             this.gridAdmin.Name = "gridAdmin";
-            this.gridAdmin.Size = new System.Drawing.Size(870, 534);
+            this.gridAdmin.Size = new System.Drawing.Size(986, 629);
             this.gridAdmin.TabIndex = 3;
             this.gridAdmin.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -100,10 +100,10 @@ namespace kutuphaneOtomasyonu.Formlar
             // 
             // xtraTabAdmin
             // 
-            this.xtraTabAdmin.Location = new System.Drawing.Point(871, 1);
+            this.xtraTabAdmin.Location = new System.Drawing.Point(988, 1);
             this.xtraTabAdmin.Name = "xtraTabAdmin";
             this.xtraTabAdmin.SelectedTabPage = this.xtraTabKitap;
-            this.xtraTabAdmin.Size = new System.Drawing.Size(314, 535);
+            this.xtraTabAdmin.Size = new System.Drawing.Size(349, 630);
             this.xtraTabAdmin.TabIndex = 4;
             this.xtraTabAdmin.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.xtraTabKitap});
@@ -112,16 +112,16 @@ namespace kutuphaneOtomasyonu.Formlar
             // 
             this.xtraTabKitap.Controls.Add(this.grpControlAdmin);
             this.xtraTabKitap.Name = "xtraTabKitap";
-            this.xtraTabKitap.Size = new System.Drawing.Size(312, 510);
+            this.xtraTabKitap.Size = new System.Drawing.Size(347, 601);
             this.xtraTabKitap.Text = "Admin";
             // 
             // grpControlAdmin
             // 
             this.grpControlAdmin.CaptionImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("grpControlAdmin.CaptionImageOptions.Image")));
             this.grpControlAdmin.Controls.Add(this.layoutControl1);
-            this.grpControlAdmin.Location = new System.Drawing.Point(0, 0);
+            this.grpControlAdmin.Location = new System.Drawing.Point(-1, 0);
             this.grpControlAdmin.Name = "grpControlAdmin";
-            this.grpControlAdmin.Size = new System.Drawing.Size(312, 510);
+            this.grpControlAdmin.Size = new System.Drawing.Size(348, 607);
             this.grpControlAdmin.TabIndex = 0;
             this.grpControlAdmin.Text = "Admin Kullanıcı Ayarları";
             // 
@@ -136,35 +136,35 @@ namespace kutuphaneOtomasyonu.Formlar
             this.layoutControl1.Controls.Add(this.txtKullaniciSoyad);
             this.layoutControl1.Controls.Add(this.txtID);
             this.layoutControl1.Controls.Add(this.pictureEdit1);
-            this.layoutControl1.Location = new System.Drawing.Point(37, 64);
+            this.layoutControl1.Location = new System.Drawing.Point(50, 105);
             this.layoutControl1.Name = "layoutControl1";
             this.layoutControl1.Root = this.Root;
-            this.layoutControl1.Size = new System.Drawing.Size(254, 322);
+            this.layoutControl1.Size = new System.Drawing.Size(280, 361);
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
             // 
             // txtKullaniciAd
             // 
-            this.txtKullaniciAd.Location = new System.Drawing.Point(132, 188);
+            this.txtKullaniciAd.Location = new System.Drawing.Point(132, 227);
             this.txtKullaniciAd.Name = "txtKullaniciAd";
-            this.txtKullaniciAd.Size = new System.Drawing.Size(110, 20);
+            this.txtKullaniciAd.Size = new System.Drawing.Size(136, 20);
             this.txtKullaniciAd.StyleController = this.layoutControl1;
             this.txtKullaniciAd.TabIndex = 13;
             // 
             // txtSifre
             // 
-            this.txtSifre.Location = new System.Drawing.Point(132, 164);
+            this.txtSifre.Location = new System.Drawing.Point(132, 203);
             this.txtSifre.Name = "txtSifre";
-            this.txtSifre.Size = new System.Drawing.Size(110, 20);
+            this.txtSifre.Size = new System.Drawing.Size(136, 20);
             this.txtSifre.StyleController = this.layoutControl1;
             this.txtSifre.TabIndex = 11;
             // 
             // BtnTemizle
             // 
-            this.BtnTemizle.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton3.ImageOptions.Image")));
-            this.BtnTemizle.Location = new System.Drawing.Point(79, 288);
+            this.BtnTemizle.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("BtnTemizle.ImageOptions.Image")));
+            this.BtnTemizle.Location = new System.Drawing.Point(86, 327);
             this.BtnTemizle.Name = "BtnTemizle";
-            this.BtnTemizle.Size = new System.Drawing.Size(163, 22);
+            this.BtnTemizle.Size = new System.Drawing.Size(182, 22);
             this.BtnTemizle.StyleController = this.layoutControl1;
             this.BtnTemizle.TabIndex = 10;
             this.BtnTemizle.Text = "Temizle";
@@ -172,10 +172,10 @@ namespace kutuphaneOtomasyonu.Formlar
             // 
             // BtnGuncelle
             // 
-            this.BtnGuncelle.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton2.ImageOptions.Image")));
-            this.BtnGuncelle.Location = new System.Drawing.Point(79, 262);
+            this.BtnGuncelle.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("BtnGuncelle.ImageOptions.Image")));
+            this.BtnGuncelle.Location = new System.Drawing.Point(86, 301);
             this.BtnGuncelle.Name = "BtnGuncelle";
-            this.BtnGuncelle.Size = new System.Drawing.Size(163, 22);
+            this.BtnGuncelle.Size = new System.Drawing.Size(182, 22);
             this.BtnGuncelle.StyleController = this.layoutControl1;
             this.BtnGuncelle.TabIndex = 9;
             this.BtnGuncelle.Text = "Güncelle";
@@ -183,10 +183,10 @@ namespace kutuphaneOtomasyonu.Formlar
             // 
             // BtnEkle
             // 
-            this.BtnEkle.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
-            this.BtnEkle.Location = new System.Drawing.Point(79, 236);
+            this.BtnEkle.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("BtnEkle.ImageOptions.Image")));
+            this.BtnEkle.Location = new System.Drawing.Point(86, 275);
             this.BtnEkle.Name = "BtnEkle";
-            this.BtnEkle.Size = new System.Drawing.Size(163, 22);
+            this.BtnEkle.Size = new System.Drawing.Size(182, 22);
             this.BtnEkle.StyleController = this.layoutControl1;
             this.BtnEkle.TabIndex = 8;
             this.BtnEkle.Text = "Ekle";
@@ -194,26 +194,26 @@ namespace kutuphaneOtomasyonu.Formlar
             // 
             // labelControl1
             // 
-            this.labelControl1.Location = new System.Drawing.Point(12, 236);
+            this.labelControl1.Location = new System.Drawing.Point(12, 275);
             this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(63, 13);
+            this.labelControl1.Size = new System.Drawing.Size(70, 13);
             this.labelControl1.StyleController = this.layoutControl1;
             this.labelControl1.TabIndex = 7;
             this.labelControl1.Text = "labelControl1";
             // 
             // txtKullaniciSoyad
             // 
-            this.txtKullaniciSoyad.Location = new System.Drawing.Point(132, 212);
+            this.txtKullaniciSoyad.Location = new System.Drawing.Point(132, 251);
             this.txtKullaniciSoyad.Name = "txtKullaniciSoyad";
-            this.txtKullaniciSoyad.Size = new System.Drawing.Size(110, 20);
+            this.txtKullaniciSoyad.Size = new System.Drawing.Size(136, 20);
             this.txtKullaniciSoyad.StyleController = this.layoutControl1;
             this.txtKullaniciSoyad.TabIndex = 1;
             // 
             // txtID
             // 
-            this.txtID.Location = new System.Drawing.Point(132, 140);
+            this.txtID.Location = new System.Drawing.Point(132, 179);
             this.txtID.Name = "txtID";
-            this.txtID.Size = new System.Drawing.Size(110, 20);
+            this.txtID.Size = new System.Drawing.Size(136, 20);
             this.txtID.StyleController = this.layoutControl1;
             this.txtID.TabIndex = 4;
             // 
@@ -222,7 +222,7 @@ namespace kutuphaneOtomasyonu.Formlar
             this.pictureEdit1.Location = new System.Drawing.Point(132, 12);
             this.pictureEdit1.Name = "pictureEdit1";
             this.pictureEdit1.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
-            this.pictureEdit1.Size = new System.Drawing.Size(110, 124);
+            this.pictureEdit1.Size = new System.Drawing.Size(136, 163);
             this.pictureEdit1.StyleController = this.layoutControl1;
             this.pictureEdit1.TabIndex = 3;
             // 
@@ -241,7 +241,7 @@ namespace kutuphaneOtomasyonu.Formlar
             this.lytSifre,
             this.lytAd});
             this.Root.Name = "Root";
-            this.Root.Size = new System.Drawing.Size(254, 322);
+            this.Root.Size = new System.Drawing.Size(280, 361);
             this.Root.TextVisible = false;
             // 
             // layoutControlItem1
@@ -249,34 +249,34 @@ namespace kutuphaneOtomasyonu.Formlar
             this.layoutControlItem1.Control = this.pictureEdit1;
             this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(234, 128);
+            this.layoutControlItem1.Size = new System.Drawing.Size(260, 167);
             this.layoutControlItem1.Text = "                                    ";
             this.layoutControlItem1.TextSize = new System.Drawing.Size(108, 13);
             // 
             // lytID
             // 
             this.lytID.Control = this.txtID;
-            this.lytID.Location = new System.Drawing.Point(0, 128);
+            this.lytID.Location = new System.Drawing.Point(0, 167);
             this.lytID.Name = "lytID";
-            this.lytID.Size = new System.Drawing.Size(234, 24);
+            this.lytID.Size = new System.Drawing.Size(260, 24);
             this.lytID.Text = "Kullanıcı ID :";
             this.lytID.TextSize = new System.Drawing.Size(108, 13);
             // 
             // lytSoyad
             // 
             this.lytSoyad.Control = this.txtKullaniciSoyad;
-            this.lytSoyad.Location = new System.Drawing.Point(0, 200);
+            this.lytSoyad.Location = new System.Drawing.Point(0, 239);
             this.lytSoyad.Name = "lytSoyad";
-            this.lytSoyad.Size = new System.Drawing.Size(234, 24);
+            this.lytSoyad.Size = new System.Drawing.Size(260, 24);
             this.lytSoyad.Text = "Kullanıcı Soyad :";
             this.lytSoyad.TextSize = new System.Drawing.Size(108, 13);
             // 
             // layoutControlItem6
             // 
             this.layoutControlItem6.Control = this.labelControl1;
-            this.layoutControlItem6.Location = new System.Drawing.Point(0, 224);
+            this.layoutControlItem6.Location = new System.Drawing.Point(0, 263);
             this.layoutControlItem6.Name = "layoutControlItem6";
-            this.layoutControlItem6.Size = new System.Drawing.Size(67, 78);
+            this.layoutControlItem6.Size = new System.Drawing.Size(74, 78);
             this.layoutControlItem6.Text = " ";
             this.layoutControlItem6.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem6.TextVisible = false;
@@ -284,45 +284,45 @@ namespace kutuphaneOtomasyonu.Formlar
             // layoutControlItem7
             // 
             this.layoutControlItem7.Control = this.BtnEkle;
-            this.layoutControlItem7.Location = new System.Drawing.Point(67, 224);
+            this.layoutControlItem7.Location = new System.Drawing.Point(74, 263);
             this.layoutControlItem7.Name = "layoutControlItem7";
-            this.layoutControlItem7.Size = new System.Drawing.Size(167, 26);
+            this.layoutControlItem7.Size = new System.Drawing.Size(186, 26);
             this.layoutControlItem7.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem7.TextVisible = false;
             // 
             // layoutControlItem8
             // 
             this.layoutControlItem8.Control = this.BtnGuncelle;
-            this.layoutControlItem8.Location = new System.Drawing.Point(67, 250);
+            this.layoutControlItem8.Location = new System.Drawing.Point(74, 289);
             this.layoutControlItem8.Name = "layoutControlItem8";
-            this.layoutControlItem8.Size = new System.Drawing.Size(167, 26);
+            this.layoutControlItem8.Size = new System.Drawing.Size(186, 26);
             this.layoutControlItem8.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem8.TextVisible = false;
             // 
             // layoutControlItem9
             // 
             this.layoutControlItem9.Control = this.BtnTemizle;
-            this.layoutControlItem9.Location = new System.Drawing.Point(67, 276);
+            this.layoutControlItem9.Location = new System.Drawing.Point(74, 315);
             this.layoutControlItem9.Name = "layoutControlItem9";
-            this.layoutControlItem9.Size = new System.Drawing.Size(167, 26);
+            this.layoutControlItem9.Size = new System.Drawing.Size(186, 26);
             this.layoutControlItem9.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem9.TextVisible = false;
             // 
             // lytSifre
             // 
             this.lytSifre.Control = this.txtSifre;
-            this.lytSifre.Location = new System.Drawing.Point(0, 152);
+            this.lytSifre.Location = new System.Drawing.Point(0, 191);
             this.lytSifre.Name = "lytSifre";
-            this.lytSifre.Size = new System.Drawing.Size(234, 24);
+            this.lytSifre.Size = new System.Drawing.Size(260, 24);
             this.lytSifre.Text = "Kullanıcı Şifre :";
             this.lytSifre.TextSize = new System.Drawing.Size(108, 13);
             // 
             // lytAd
             // 
             this.lytAd.Control = this.txtKullaniciAd;
-            this.lytAd.Location = new System.Drawing.Point(0, 176);
+            this.lytAd.Location = new System.Drawing.Point(0, 215);
             this.lytAd.Name = "lytAd";
-            this.lytAd.Size = new System.Drawing.Size(234, 24);
+            this.lytAd.Size = new System.Drawing.Size(260, 24);
             this.lytAd.Text = "Kullanıcı Adı :";
             this.lytAd.TextSize = new System.Drawing.Size(108, 13);
             // 
@@ -330,7 +330,7 @@ namespace kutuphaneOtomasyonu.Formlar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1186, 536);
+            this.ClientSize = new System.Drawing.Size(1338, 631);
             this.Controls.Add(this.gridAdmin);
             this.Controls.Add(this.xtraTabAdmin);
             this.Name = "FrmAdmin";

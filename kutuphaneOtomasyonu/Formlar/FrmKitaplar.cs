@@ -25,29 +25,34 @@ namespace kutuphaneOtomasyonu.Formlar
         void Listele()
         {
             DataTable dt = new DataTable();
-            SqlDataAdapter da = new SqlDataAdapter("select * from TblKitaplar Where kitapTuru ='Bilim Kurgu'", bgl.Baglanti());
+            SqlDataAdapter da = new SqlDataAdapter("select * from TblKitaplar Where kitapTuru ='Comedy|Drama'", bgl.Baglanti());
             da.Fill(dt);
             gridBilimKurgu.DataSource = dt;
 
             DataTable dt2 = new DataTable();
-            SqlDataAdapter da2 = new SqlDataAdapter("select * from TblKitaplar Where kitapTuru ='Fantastik'", bgl.Baglanti());
+            SqlDataAdapter da2 = new SqlDataAdapter("select * from TblKitaplar Where kitapTuru ='Documentary'", bgl.Baglanti());
             da2.Fill(dt2);
             gridFantastik.DataSource = dt2;
 
             DataTable dt3 = new DataTable();
-            SqlDataAdapter da3 = new SqlDataAdapter("select * from TblKitaplar Where kitapTuru ='Tarihi'", bgl.Baglanti());
+            SqlDataAdapter da3 = new SqlDataAdapter("select * from TblKitaplar Where kitapTuru ='Crime|Drama'", bgl.Baglanti());
             da3.Fill(dt3);
             gridTarihi.DataSource = dt3;
 
             DataTable dt4 = new DataTable();
-            SqlDataAdapter da4 = new SqlDataAdapter("select * from TblKitaplar Where kitapTuru ='Çocuk'", bgl.Baglanti());
+            SqlDataAdapter da4 = new SqlDataAdapter("select * from TblKitaplar Where kitapTuru ='Horror'", bgl.Baglanti());
             da4.Fill(dt4);
             gridCocuk.DataSource = dt4;
 
             DataTable dt5 = new DataTable();
-            SqlDataAdapter da5 = new SqlDataAdapter("select * from TblKitaplar Where kitapTuru ='Sosyoloji'", bgl.Baglanti());
+            SqlDataAdapter da5 = new SqlDataAdapter("select * from TblKitaplar Where kitapTuru ='Drama'", bgl.Baglanti());
             da5.Fill(dt5);
             gridSosyoloji.DataSource = dt5;
+
+            DataTable dt6 = new DataTable();
+            SqlDataAdapter da6 = new SqlDataAdapter("Select * From TblKitaplar", bgl.Baglanti());
+            da6.Fill(dt6);
+            gridTumu.DataSource = dt6;
         }
 
         void Temizle()
@@ -169,6 +174,23 @@ namespace kutuphaneOtomasyonu.Formlar
                 pctBox.ImageLocation = yeniYol;
             }
         }
+        private void gridView6_FocusedRowObjectChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowObjectChangedEventArgs e)
+        {
+            DataRow dr6 = gridView5.GetDataRow(gridView6.FocusedRowHandle);
+            if (dr6 != null)
+            {
+                txtID.Text = dr6["kitapID"].ToString();
+                txtKitapAd.Text = dr6["kitapAd"].ToString();
+                txtYazar.Text = dr6["kitapYazari"].ToString();
+                cmBoxTur.Text = dr6["kitapTuru"].ToString();
+                dateBaskiYili.Text = dr6["kitapBaskiYili"].ToString();
+                txtKitapDili.Text = dr6["kitapDili"].ToString();
+                txtYayinEvi.Text = dr6["YayinEvi"].ToString();
+                rchAciklama.Text = dr6["Aciklama"].ToString();
+                yeniYol = "C:\\Users\\oguz_\\source\\repos\\kutuphaneOtomasyonu\\kutuphaneOtomasyonu" + "\\Resimler\\" + dr6["kitapFoto"].ToString();
+                pctBox.ImageLocation = yeniYol;
+            }
+        }
 
         private void BtnEkle_Click(object sender, EventArgs e)
         {
@@ -260,6 +282,16 @@ namespace kutuphaneOtomasyonu.Formlar
         private void BtnTemizle_Click(object sender, EventArgs e)
         {
             Temizle();
+        }
+
+        private void txtKitapBul_EditValueChanged(object sender, EventArgs e)
+        {
+            // Aranan kitabı adına göre listede gösterme
+            string arananKitap = txtKitapBul.Text;
+            var degerler = from item in db.TblKitaplar
+                           where item.kitapAd.Contains(arananKitap)
+                           select item;
+            gridTumu.DataSource = degerler.ToList();
         }
     }
 }

@@ -18,7 +18,7 @@
     <Property Name="uyeID" Type="Int32" />
     <Property Name="kitapId" Type="Int32" />
     <Property Name="EmanetVermeTarihi" Type="DateTime" Precision="0" />
-    <Property Name="EmanetAlmaTarihi" Type="DateTime" Precision="0" />
+    <Property Name="EmanetAlmaTarihi" Type="DateTime" Precision="0" Nullable="false" />
     <Property Name="EmanetIslemTarihi" Type="DateTime" Precision="3" />
     <Property Name="EmanetDurum" Type="Boolean" />
     <NavigationProperty Name="TblKitaplar" Relationship="Self.FK_TblEmanetler_TblKitaplar" FromRole="TblEmanetler" ToRole="TblKitaplar" />
@@ -53,7 +53,7 @@
     <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="Ad" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
     <Property Name="Soyad" Type="String" MaxLength="25" FixedLength="true" Unicode="true" />
-    <Property Name="Telefon" Type="String" MaxLength="11" FixedLength="true" Unicode="true" />
+    <Property Name="Telefon" Type="String" MaxLength="12" FixedLength="true" Unicode="true" />
     <Property Name="Mail" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
     <Property Name="Adres" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
     <Property Name="uyeFoto" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
@@ -97,5 +97,24 @@
       <End Role="TblUyeler" EntitySet="TblUyeler" />
       <End Role="TblEmanetler" EntitySet="TblEmanetler" />
     </AssociationSet>
+    <FunctionImport Name="AdmınLog" ReturnType="Collection(kutuphaneOtomasyonModel.AdmınLog_Result)" />
+    <FunctionImport Name="KitapEmanetler" ReturnType="Collection(kutuphaneOtomasyonModel.KitapEmanetler_Result)" />
   </EntityContainer>
+  <ComplexType Name="AdmınLog_Result">
+    <Property Type="Int32" Name="kullaniciID" Nullable="false" />
+    <Property Type="String" Name="kullaniciSifre" Nullable="false" MaxLength="10" />
+    <Property Type="String" Name="kullaniciAd" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="kullaniciSoyad" Nullable="true" MaxLength="25" />
+  </ComplexType>
+  <ComplexType Name="KitapEmanetler_Result">
+    <Property Type="Int32" Name="EmanetNo" Nullable="false" />
+    <Property Type="Int32" Name="uyeID" Nullable="true" />
+    <Property Type="String" Name="UyeAdı" Nullable="true" MaxLength="20" />
+    <Property Type="Int32" Name="kitapId" Nullable="true" />
+    <Property Type="String" Name="KitapAdı" Nullable="true" MaxLength="60" />
+    <Property Type="DateTime" Name="EmanetVermeTarihi" Nullable="true" />
+    <Property Type="DateTime" Name="EmanetAlmaTarihi" Nullable="false" />
+    <Property Type="DateTime" Name="EmanetIslemTarihi" Nullable="true" Precision="23" />
+    <Property Type="Boolean" Name="EmanetDurum" Nullable="true" />
+  </ComplexType>
 </Schema>

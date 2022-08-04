@@ -61,5 +61,30 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="AdmınLog" FunctionName="kutuphaneOtomasyonModel.Store.AdmınLog">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="kutuphaneOtomasyonModel.AdmınLog_Result">
+          <ScalarProperty Name="kullaniciID" ColumnName="kullaniciID" />
+          <ScalarProperty Name="kullaniciSifre" ColumnName="kullaniciSifre" />
+          <ScalarProperty Name="kullaniciAd" ColumnName="kullaniciAd" />
+          <ScalarProperty Name="kullaniciSoyad" ColumnName="kullaniciSoyad" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="KitapEmanetler" FunctionName="kutuphaneOtomasyonModel.Store.KitapEmanetler">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="kutuphaneOtomasyonModel.KitapEmanetler_Result">
+          <ScalarProperty Name="EmanetNo" ColumnName="EmanetNo" />
+          <ScalarProperty Name="uyeID" ColumnName="uyeID" />
+          <ScalarProperty Name="UyeAdı" ColumnName="UyeAdı" />
+          <ScalarProperty Name="kitapId" ColumnName="kitapId" />
+          <ScalarProperty Name="KitapAdı" ColumnName="KitapAdı" />
+          <ScalarProperty Name="EmanetVermeTarihi" ColumnName="EmanetVermeTarihi" />
+          <ScalarProperty Name="EmanetAlmaTarihi" ColumnName="EmanetAlmaTarihi" />
+          <ScalarProperty Name="EmanetIslemTarihi" ColumnName="EmanetIslemTarihi" />
+          <ScalarProperty Name="EmanetDurum" ColumnName="EmanetDurum" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
   </EntityContainerMapping>
 </Mapping>

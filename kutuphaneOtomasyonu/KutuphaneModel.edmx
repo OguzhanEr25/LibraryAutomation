@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="kutuphaneOtomasyonModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="kutuphaneOtomasyonModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="sysdiagrams">
           <Key>
             <PropertyRef Name="diagram_id" />
@@ -23,7 +23,7 @@
           <Property Name="uyeID" Type="int" />
           <Property Name="kitapId" Type="int" />
           <Property Name="EmanetVermeTarihi" Type="date" />
-          <Property Name="EmanetAlmaTarihi" Type="date" />
+          <Property Name="EmanetAlmaTarihi" Type="date" Nullable="false" />
           <Property Name="EmanetIslemTarihi" Type="datetime" />
           <Property Name="EmanetDurum" Type="bit" />
         </EntityType>
@@ -55,7 +55,7 @@
           <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Ad" Type="nchar" MaxLength="20" />
           <Property Name="Soyad" Type="nchar" MaxLength="25" />
-          <Property Name="Telefon" Type="nchar" MaxLength="11" />
+          <Property Name="Telefon" Type="nchar" MaxLength="12" />
           <Property Name="Mail" Type="nchar" MaxLength="50" />
           <Property Name="Adres" Type="nchar" MaxLength="100" />
           <Property Name="uyeFoto" Type="varchar" MaxLength="500" />
@@ -84,6 +84,8 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Function Name="AdmınLog" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="KitapEmanetler" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <EntityContainer Name="kutuphaneOtomasyonModelStoreContainer">
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TblEmanetler" EntityType="Self.TblEmanetler" Schema="dbo" store:Type="Tables" />
@@ -99,8 +101,7 @@
             <End Role="TblEmanetler" EntitySet="TblEmanetler" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="kutuphaneOtomasyonModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -122,7 +123,7 @@
           <Property Name="uyeID" Type="Int32" />
           <Property Name="kitapId" Type="Int32" />
           <Property Name="EmanetVermeTarihi" Type="DateTime" Precision="0" />
-          <Property Name="EmanetAlmaTarihi" Type="DateTime" Precision="0" />
+          <Property Name="EmanetAlmaTarihi" Type="DateTime" Precision="0" Nullable="false" />
           <Property Name="EmanetIslemTarihi" Type="DateTime" Precision="3" />
           <Property Name="EmanetDurum" Type="Boolean" />
           <NavigationProperty Name="TblKitaplar" Relationship="Self.FK_TblEmanetler_TblKitaplar" FromRole="TblEmanetler" ToRole="TblKitaplar" />
@@ -157,7 +158,7 @@
           <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Ad" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
           <Property Name="Soyad" Type="String" MaxLength="25" FixedLength="true" Unicode="true" />
-          <Property Name="Telefon" Type="String" MaxLength="11" FixedLength="true" Unicode="true" />
+          <Property Name="Telefon" Type="String" MaxLength="12" FixedLength="true" Unicode="true" />
           <Property Name="Mail" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
           <Property Name="Adres" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
           <Property Name="uyeFoto" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
@@ -201,7 +202,26 @@
             <End Role="TblUyeler" EntitySet="TblUyeler" />
             <End Role="TblEmanetler" EntitySet="TblEmanetler" />
           </AssociationSet>
+          <FunctionImport Name="AdmınLog" ReturnType="Collection(kutuphaneOtomasyonModel.AdmınLog_Result)" />
+          <FunctionImport Name="KitapEmanetler" ReturnType="Collection(kutuphaneOtomasyonModel.KitapEmanetler_Result)" />
         </EntityContainer>
+        <ComplexType Name="AdmınLog_Result">
+          <Property Type="Int32" Name="kullaniciID" Nullable="false" />
+          <Property Type="String" Name="kullaniciSifre" Nullable="false" MaxLength="10" />
+          <Property Type="String" Name="kullaniciAd" Nullable="true" MaxLength="20" />
+          <Property Type="String" Name="kullaniciSoyad" Nullable="true" MaxLength="25" />
+        </ComplexType>
+        <ComplexType Name="KitapEmanetler_Result">
+          <Property Type="Int32" Name="EmanetNo" Nullable="false" />
+          <Property Type="Int32" Name="uyeID" Nullable="true" />
+          <Property Type="String" Name="UyeAdı" Nullable="true" MaxLength="20" />
+          <Property Type="Int32" Name="kitapId" Nullable="true" />
+          <Property Type="String" Name="KitapAdı" Nullable="true" MaxLength="60" />
+          <Property Type="DateTime" Name="EmanetVermeTarihi" Nullable="true" />
+          <Property Type="DateTime" Name="EmanetAlmaTarihi" Nullable="false" />
+          <Property Type="DateTime" Name="EmanetIslemTarihi" Nullable="true" Precision="23" />
+          <Property Type="Boolean" Name="EmanetDurum" Nullable="true" />
+        </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -268,6 +288,31 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="AdmınLog" FunctionName="kutuphaneOtomasyonModel.Store.AdmınLog">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="kutuphaneOtomasyonModel.AdmınLog_Result">
+                <ScalarProperty Name="kullaniciID" ColumnName="kullaniciID" />
+                <ScalarProperty Name="kullaniciSifre" ColumnName="kullaniciSifre" />
+                <ScalarProperty Name="kullaniciAd" ColumnName="kullaniciAd" />
+                <ScalarProperty Name="kullaniciSoyad" ColumnName="kullaniciSoyad" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="KitapEmanetler" FunctionName="kutuphaneOtomasyonModel.Store.KitapEmanetler">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="kutuphaneOtomasyonModel.KitapEmanetler_Result">
+                <ScalarProperty Name="EmanetNo" ColumnName="EmanetNo" />
+                <ScalarProperty Name="uyeID" ColumnName="uyeID" />
+                <ScalarProperty Name="UyeAdı" ColumnName="UyeAdı" />
+                <ScalarProperty Name="kitapId" ColumnName="kitapId" />
+                <ScalarProperty Name="KitapAdı" ColumnName="KitapAdı" />
+                <ScalarProperty Name="EmanetVermeTarihi" ColumnName="EmanetVermeTarihi" />
+                <ScalarProperty Name="EmanetAlmaTarihi" ColumnName="EmanetAlmaTarihi" />
+                <ScalarProperty Name="EmanetIslemTarihi" ColumnName="EmanetIslemTarihi" />
+                <ScalarProperty Name="EmanetDurum" ColumnName="EmanetDurum" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

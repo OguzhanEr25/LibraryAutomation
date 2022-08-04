@@ -18,7 +18,7 @@
     <Property Name="uyeID" Type="int" />
     <Property Name="kitapId" Type="int" />
     <Property Name="EmanetVermeTarihi" Type="date" />
-    <Property Name="EmanetAlmaTarihi" Type="date" />
+    <Property Name="EmanetAlmaTarihi" Type="date" Nullable="false" />
     <Property Name="EmanetIslemTarihi" Type="datetime" />
     <Property Name="EmanetDurum" Type="bit" />
   </EntityType>
@@ -50,7 +50,7 @@
     <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Ad" Type="nchar" MaxLength="20" />
     <Property Name="Soyad" Type="nchar" MaxLength="25" />
-    <Property Name="Telefon" Type="nchar" MaxLength="11" />
+    <Property Name="Telefon" Type="nchar" MaxLength="12" />
     <Property Name="Mail" Type="nchar" MaxLength="50" />
     <Property Name="Adres" Type="nchar" MaxLength="100" />
     <Property Name="uyeFoto" Type="varchar" MaxLength="500" />
@@ -79,6 +79,8 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Function Name="AdmınLog" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="KitapEmanetler" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
   <EntityContainer Name="kutuphaneOtomasyonModelStoreContainer">
     <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TblEmanetler" EntityType="Self.TblEmanetler" Schema="dbo" store:Type="Tables" />

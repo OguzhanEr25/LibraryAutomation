@@ -91,3 +91,4 @@ C:\Users\oguz_\source\repos\kutuphaneOtomasyonu\kutuphaneOtomasyonu\obj\Debug\ku
 C:\Users\oguz_\source\repos\kutuphaneOtomasyonu\kutuphaneOtomasyonu\obj\Debug\kutuphaneOtomasyonu.Formlar.FrmLogin.resources
 C:\Users\oguz_\source\repos\kutuphaneOtomasyonu\kutuphaneOtomasyonu\obj\Debug\kutuphaneOtomasyonu.Formlar.FrmGiris.resources
 C:\Users\oguz_\source\repos\kutuphaneOtomasyonu\kutuphaneOtomasyonu\obj\Debug\kutuphaneOtomasyonu.Formlar.FrmAnaSayfa.resources
+C:\Users\oguz_\source\repos\kutuphaneOtomasyonu\kutuphaneOtomasyonu\bin\Debug\DevExpress.BonusSkins.v22.1.dll

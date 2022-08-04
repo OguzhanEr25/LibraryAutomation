@@ -201,20 +201,30 @@ namespace kutuphaneOtomasyonu.Formlar
             // Sadece emanet alınmış kitapları listele
             if (radioEmntAlinan.Checked == true)
             {
-                List<TblEmanetler> list = db.TblEmanetler.Where(p => p.EmanetDurum == true).ToList();
+                List<KitapEmanetler_Result> list = db.KitapEmanetler().Where(p => p.EmanetDurum == true).ToList();
                 gridEmanetler.DataSource = list;
             }
             if(radioEmntVerilen.Checked == true)
             {
                 // Sadece emanet verilen kitapları listele
-                List<TblEmanetler> list2 = db.TblEmanetler.Where(p => p.EmanetDurum == false).ToList();
+                List<KitapEmanetler_Result> list2 = db.KitapEmanetler().Where(p => p.EmanetDurum == false).ToList();
                 gridEmanetler.DataSource = list2;
             }
             if(radioTumu.Checked == true)
             {
-                List<TblEmanetler> list3 = db.TblEmanetler.Select(x => x).ToList();
+                List<KitapEmanetler_Result> list3 = db.KitapEmanetler().Select(x => x).ToList();
                 gridEmanetler.DataSource = list3;
             }
+        }
+
+        private void txtEmanetBul_EditValueChanged(object sender, EventArgs e)
+        {
+            // Aranan emanet kitabı, emanet numarasına göre listede gösterme
+            string arananEmnt = txtEmanetBul.Text;
+            var deger = from item in db.KitapEmanetler()
+                        where Convert.ToString(item.EmanetNo).Contains(arananEmnt)
+                        select item;
+            gridEmanetler.DataSource = deger.ToList();
         }
     }
 }

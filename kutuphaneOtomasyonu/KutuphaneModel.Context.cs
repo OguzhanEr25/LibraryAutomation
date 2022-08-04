@@ -12,6 +12,8 @@ namespace kutuphaneOtomasyonu
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
+    using System.Data.Entity.Core.Objects;
+    using System.Linq;
     
     public partial class DbKutuphaneEntities : DbContext
     {
@@ -30,5 +32,15 @@ namespace kutuphaneOtomasyonu
         public virtual DbSet<TblKitaplar> TblKitaplar { get; set; }
         public virtual DbSet<TblKitapTurleri> TblKitapTurleri { get; set; }
         public virtual DbSet<TblUyeler> TblUyeler { get; set; }
+    
+        public virtual ObjectResult<AdmınLog_Result> AdmınLog()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<AdmınLog_Result>("AdmınLog");
+        }
+    
+        public virtual ObjectResult<KitapEmanetler_Result> KitapEmanetler()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<KitapEmanetler_Result>("KitapEmanetler");
+        }
     }
 }

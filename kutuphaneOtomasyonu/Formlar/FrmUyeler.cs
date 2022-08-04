@@ -21,6 +21,7 @@ namespace kutuphaneOtomasyonu.Formlar
 
         SqlBaglantisi bgl = new SqlBaglantisi();
         DataTable dt = new DataTable();
+        DbKutuphaneEntities db = new DbKutuphaneEntities();
 
         void Listele() // SQL deki verilerin grid üzerinde görünmesini sağlar
         {
@@ -119,6 +120,16 @@ namespace kutuphaneOtomasyonu.Formlar
             bgl.Baglanti().Close();
             MessageBox.Show("Personel silindi", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             Listele();
+        }
+
+        private void txtUyeAra_EditValueChanged(object sender, EventArgs e) 
+        {
+            // Aranan üye ismini listede gösterme
+            string uyeAra = txtUyeAra.Text;
+            var deger = from item in db.TblUyeler
+                        where item.Ad.Contains(uyeAra)
+                        select item;
+            gridControlUye.DataSource = deger.ToList();
         }
     }
 }
